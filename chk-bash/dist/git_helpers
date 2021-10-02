@@ -1,0 +1,62 @@
+my-git() {
+  if [ $1 ]; then
+    git "$@"
+   else
+    git status
+  fi
+}
+
+gir() {
+  if [ $1 ]; then
+    git rebase -i HEAD~$1
+  else
+    git rebase -i HEAD~10
+  fi
+}
+
+git_branch_url() {
+  echo `cat .mygiturl`/commits/`git-current-branch`
+}
+
+# read = {
+alias git-current-branch="git symbolic-ref --short HEAD"
+alias g='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gaaa='git add --all'
+# }
+
+# write = {
+alias gb='git branch'
+alias gpushb='git push origin HEAD'
+alias git-cherry='git cherry-pick'
+alias gt='git tag -a -m'
+# }
+
+# commits = {
+alias gc='git commit -v'
+alias gc-amend='git commit --amend'
+alias gc-first='git commit -m "first commit"'
+alias gc-empty='git commit -m "empty project"'
+alias gc-wip='git commit -m "WIP"'
+alias gc-up='git commit -m "revision"'
+alias gc-rev='git commit -m "revision"'
+alias gc-readme='git commit -m "update README"'
+# }
+
+# danger = {
+alias gr='git reset'
+alias grlast='git reset HEAD~1'
+alias gco='git checkout'
+alias grcon='git rebase --continue'
+alias grab='git rebase --abort'
+alias gir-root='git rebase -i --root'
+# }
+
+# stats = {
+alias gl='git log'
+alias glg='git log --all --graph --oneline --decorate'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gcount='git rev-list HEAD --count'
+# }

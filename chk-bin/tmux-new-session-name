@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+main() {
+  local basename_str=$(basename `pwd`)
+  echo "${basename_str//\./_}"
+}
+
+main

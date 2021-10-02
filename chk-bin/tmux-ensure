@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+main() {
+  tmux-is-nested
+  local is_nested="$?"
+  if "$is_nested" = "1"; then
+    tat
+  fi
+}
+
+main

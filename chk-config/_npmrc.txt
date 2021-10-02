@@ -1,0 +1,5 @@
+init.version=1.0.0
+init.author.name=Chanaka Sandaruwan
+init.author.email=chanakasan@gmail.com
+init.author.url=https://chanakasan.org
+init.license=Apache-2.0

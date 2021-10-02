@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set +e
+
+main() {
+  [ -z "$TMUX" ]
+  local status="$?"
+  if [ "$status" = "1" ]; then
+    echo true
+  else
+    echo false
+  fi
+  exit 0
+}
+
+main

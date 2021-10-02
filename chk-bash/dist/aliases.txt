@@ -1,0 +1,20 @@
+# safety {
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+# }
+
+# utils {
+alias cl="clear"
+alias ll="ls -lah"
+alias mkdirp="mkdir -p"
+# }
+
+# nav {
+alias ..="cd .."
+alias cdd="cd -"
+# }
+
+# other {
+alias rr="source $HOME/.bashrc"
+# }

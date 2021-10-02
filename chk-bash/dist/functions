@@ -1,0 +1,19 @@
+chk_bash_dist_path() {
+  echo $chk_bash_dist_path
+}
+
+chk_edit() {
+  local filename=$1
+  vi `chk_bash_dist_path`/$filename
+}
+
+chk_source() {
+  local filename=$1
+  source `chk_bash_dist_path`/$filename
+}
+
+alias_edit() {
+  export CY_ALIAS_EDIT_FILE="$1"
+}
+
+# vim:ft=sh:

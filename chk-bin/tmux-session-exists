@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#
+# prints true or false
+
+set +e
+
+main() {
+  local name=$1
+  local pattern="^$name$"
+  tmux list-sessions | sed -E 's/:.*$//' | grep -q "$pattern"
+  local status="$?"
+  if [ "$status" = "0" ]; then
+    echo true
+  else
+    echo false
+  fi
+  exit 0
+}
+
+main "$@"
