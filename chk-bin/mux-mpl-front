@@ -5,6 +5,11 @@ main() {
   local s=mypost-front
   cd $wd
   
+  local x=$(tmux-session-exists $s)
+  if [[ "$x" = "true" ]]; then
+    exit 0
+  fi
+
   tmux new-session -d -s $s -n "main"
   tmux send-keys -t $s:1 "vi ." C-m
   #---------------------------------------------------------------------------
@@ -12,7 +17,6 @@ main() {
   tmux send-keys -t $s:2 "yarn && yarn start" C-m
   #---------------------------------------------------------------------------
   tmux select-window -t $s:1
-  tmux attach -t $s:1 
 }
 
 main

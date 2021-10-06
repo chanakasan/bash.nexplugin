@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Usage
+# tmux-new <session> [<opts>]
+# Creates a new tmux-session.
+# Does nothing if session exists.
+
+debug_switch=on
+
+debug() {
+  if [[ "$debug_switch" != "on" ]]; then
+    return
+  fi
+  local k=$1
+  local v=$2
+  if [[ -n $v ]]; then
+    echo "[DEBUG] $k = $v"
+  else
+    echo "[DEBUG] $k"
+  fi
+}
+
+main() {
+  local s=$1
+  local opts=$2
+  local defaultName=$(tmux-new-session-name)
+
+  if [ -z "$s" ]; then
+    s=$defaultName
+  fi
+
+  debug s $s
+  local does_exist=$(tmux-session-exists $s)
+  debug does_exist $does_exist
+  if [[ "$does_exist" != "true" ]]; then
+    tmux new-session -Ad -s $s -n "main"
+  fi
+
+  if [[ "$opts" = "-d" ]]; then
+    debug no-attach
+    exit 0
+  fi
+  tmux-attach $s
+}
+
+main "$@"

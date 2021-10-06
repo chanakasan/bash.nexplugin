@@ -4,6 +4,11 @@ main() {
   local wd=$HOME/desktop
   local s=desktop
   cd $wd
+
+  local x=$(tmux-session-exists $s)
+  if [[ "$x" = "true" ]]; then
+    exit 0
+  fi
   
   tmux new-session -d -s $s -n "main"
   tmux send-keys -t $s:1 "postgres-start" C-m
@@ -16,10 +21,6 @@ main() {
   #---------------------------------------------------------------------------
   tmux new-window -t $s:4 -n "mailcatcher"
   tmux send-keys -t $s:4 "mailcatcher -f" C-m
-  #---------------------------------------------------------------------------
-  tmux select-window -t $s:1
-  tmux attach -t $s:1 
 }
 
 main
-

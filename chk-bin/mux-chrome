@@ -5,9 +5,13 @@ main() {
   local s=chrome
   cd $wd
   
+  local x=$(tmux-session-exists $s)
+  if [[ "$x" = "true" ]]; then
+    exit 0
+  fi
+
   tmux new-session -d -s $s -n "main"
   tmux send-keys -t $s:1 "google-chrome" C-m
-  tmux attach -t $s:1 
 }
 
 main

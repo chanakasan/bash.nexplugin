@@ -5,4 +5,4 @@
 "--install.prefer-offline" true
 init-license Apache-2.0
 init-version "1.0.0"
-lastUpdateCheck 1596127034508
+lastUpdateCheck 1633488537009

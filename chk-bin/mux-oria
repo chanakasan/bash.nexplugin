@@ -4,6 +4,11 @@ main() {
   local wd=$HOME/dev/oria
   local s=oria
   cd $wd
+
+  local x=$(tmux-session-exists $s)
+  if [[ "$x" = "true" ]]; then
+    exit 0
+  fi
   
   tmux new-session -d -s $s -n "main"
   tmux send-keys -t $s:1 "vi ." C-m

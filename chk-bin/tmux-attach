@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+debug_switch=on
+
+debug() {
+  if [[ "$debug_switch" != "on" ]]; then
+    return
+  fi
+  local k=$1
+  local v=$2
+  if [[ -n $v ]]; then
+    echo "[DEBUG] $k = $v"
+  else
+    echo "[DEBUG] $k"
+  fi
+}
+
+main() {
+  local s="$1"
+
+  if [[ -z $s ]]; then
+    echo "Usage: tmux-attach <session>"
+    exit -1
+  fi
+
+  debug s $s
+  local is_nested=$(tmux-is-nested)
+  debug is_nested $is_nested
+  if [[ "$is_nested" = "true" ]]; then
+    debug switch-client
+    tmux switch-client -t $s
+  else
+    debug attach-session
+    tmux attach-session -t $s
+  fi
+}
+
+main "$@"
