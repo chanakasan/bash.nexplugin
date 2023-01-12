@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+main() {
+  local wd=$HOME/repos
+  local s=repos
+  cd $wd
+  
+  tmux new-session -d -s $s -n "main"
+  tmux select-window -t $s:1
+  #tmux attach -t $s:1 
+}
+
+main

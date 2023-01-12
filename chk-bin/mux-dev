@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mux-repos
+mux-code
+mux-oria

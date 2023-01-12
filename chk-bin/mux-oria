@@ -4,11 +4,6 @@ main() {
   local wd=$HOME/dev/oria
   local s=oria
   cd $wd
-
-  local x=$(tmux-session-exists $s)
-  if [[ "$x" = "true" ]]; then
-    exit 0
-  fi
   
   tmux new-session -d -s $s -n "main"
   tmux send-keys -t $s:1 "vi ." C-m
@@ -21,8 +16,14 @@ main() {
   tmux new-window -t $s:3 -n "console"
   tmux send-keys -t $s:3 "rails c" C-m
   #---------------------------------------------------------------------------
+  tmux new-window -t $s:4 -n "redis"
+  tmux send-keys -t $s:4 "redis-server" C-m
+  #---------------------------------------------------------------------------
+  tmux new-window -t $s:5 -n "mailcatcher"
+  tmux send-keys -t $s:5 "mailcatcher" C-m
+  #---------------------------------------------------------------------------
   tmux select-window -t $s:1
-  tmux attach -t $s:1 
+  #tmux attach -t $s:1 
 }
 
 main

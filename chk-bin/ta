@@ -3,8 +3,8 @@
 set +e
 
 main() {
-  local x=$(tmux-is-nested)
-  if [ "$x" = "false" ]; then
+  local is_nested=$(tmux-is-nested)
+  if [ "$is_nested" = "false" ]; then
     tmux attach
   fi
 }
