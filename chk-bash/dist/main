@@ -1,6 +1,3 @@
-export chk_dotfiles_path=$HOME/dotfiles
-export chk_bash_dist_path=$chk_dotfiles_path/chk-bash/dist
-
 echo "Hi - $chk_bash_dist_path/main"
 
 [[ $- == *i* ]] && stty -ixon
