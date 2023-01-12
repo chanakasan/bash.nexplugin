@@ -73,10 +73,3 @@ Guardfile.local
 tags
 ftp-test-scripts
 .rbenv-gemsets
-
-# my files
-timelog
-_stash/*
-tdd
-rr_*
-/gems
