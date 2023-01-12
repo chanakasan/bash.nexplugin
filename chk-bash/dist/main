@@ -1,9 +1,12 @@
-echo "Hi! Welcome :)"
+export chk_dotfiles_path=$HOME/dotfiles
+export chk_bash_dist_path=$chk_dotfiles_path/chk-bash/dist
+
+echo "Hi - $chk_bash_dist_path/main"
 
 [[ $- == *i* ]] && stty -ixon
 
 source $chk_bash_dist_path/env
-source $chk_bash_dist_path/aliases.txt
+source $chk_bash_dist_path/aliases
 source $chk_bash_dist_path/git_helpers
 source $chk_bash_dist_path/functions
 source $chk_bash_dist_path/dev_aliases

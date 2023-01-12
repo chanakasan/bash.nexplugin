@@ -1,9 +1,5 @@
 alias rspecf="rspec --tag ~slow:true"
-alias php-server="php -S localhost:8000"
-
-alias npm="echo use yarn"
-alias yt="yarn test"
-alias ys="yarn start"
+alias php-server="php -S 0.0.0.0:8000"
 
 alias postgres-rm-pid="rm /usr/local/var/postgresql@9.5/postmaster.pid"
 alias puma-dev-start="launchctl load ~/Library/LaunchAgents/io.puma.dev.plist"
