@@ -1,4 +1,4 @@
-echo "Hi - $chk_bash_dist_path/main"
+echo "Hi - Bash"
 
 [[ $- == *i* ]] && stty -ixon
 
@@ -7,3 +7,4 @@ source $chk_bash_dist_path/aliases
 source $chk_bash_dist_path/git_helpers
 source $chk_bash_dist_path/functions
 source $chk_bash_dist_path/dev_aliases
+source $chk_bash_dist_path/custom
