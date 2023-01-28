@@ -40,7 +40,6 @@ check_installed() {
 }
 
 main() {
-  start_debug
   local installed_file=$HOME/.chk_dotfiles_installed
 
   echo "Dofiles - Uninstall"

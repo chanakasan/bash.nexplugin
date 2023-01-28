@@ -87,7 +87,6 @@ check_installed() {
 }
 
 main() {
-  start_debug
   local wd=$HOME
   local bashrc="$HOME/.bashrc"
   local bashrc2=$HOME/.bashrc2
