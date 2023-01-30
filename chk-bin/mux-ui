@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  local wd=$HOME/dev/react-ui
+  local wd=$HOME/dev/react-ui-kit
   local s=react-ui
   cd $wd
   

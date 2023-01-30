@@ -41,7 +41,6 @@ alias gc-empty='git commit -m "empty project"'
 alias gc-wip='git commit -m "WIP"'
 alias gc-up='git commit -m "revision"'
 alias gc-rev='git commit -m "revision"'
-alias gc-readme='git commit -m "update README"'
 # }
 
 # danger = {
