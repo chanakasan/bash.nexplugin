@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+main() {
+  local s=$(pgrep -x vi)
+
+  if [ -z "$s"  ]; then
+    TERM= vi "$@"
+  else
+    exit 0
+  fi
+}
+
+main $@

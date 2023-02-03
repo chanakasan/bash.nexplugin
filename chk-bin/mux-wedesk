@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 main() {
-  local wd=$HOME/dev/cmediaplayer_web
-  local s=react-ui
+  local wd=$HOME/dev/wedesk
+  local s=wedesk
   cd $wd
   
   tmux new-session -d -s $s -n "main"
@@ -16,3 +16,4 @@ main() {
 }
 
 main
+
