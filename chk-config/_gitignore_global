@@ -40,12 +40,6 @@ dump.rdb
 ehthumbs.db
 Thumbs.db
 
-# IDE #
-#######
-.idea/
-*.iml
-*.xcodeproj/
-
 # Vim #
 #######
 *~
@@ -54,22 +48,31 @@ Thumbs.db
 Session.vim
 .netrwhist
 
-# Packages #
+# Package directories #
+#######################
 /node_modules/
 .bundle/
 .gems
 vendor/*
 
+# IDE #
+#######
+.idea/
+*.iml
+*.xcodeproj/
+.vscode/
+
+# other #
+#########
+.rbenv-gemsets
+tags
+
 # local #
 #########
-.vscode/
-*.pem
+_dictionary
 cypress/videos
 .agignore
 .projections.json
 Procfile.local
 Guardfile.local
 .php_cs.cache
-tags
-ftp-test-scripts
-.rbenv-gemsets
