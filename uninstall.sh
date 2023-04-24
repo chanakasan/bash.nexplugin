@@ -2,33 +2,8 @@
 
 set -e
 
-get_suffix() {
-  echo $(date +%Y%m%d_%H%M_%S)
-}
-
-do_run() {
-  local suffix=$(get_suffix)
-  local bashrc=$HOME/.bashrc
-  local bashrc2=$HOME/.bashrc2
-
-  mv $bashrc $HOME/old_bashrc_$suffix
-  if [ -f "$bashrc2" ]; then
-    mv $bashrc2 $bashrc
-  fi
-  rm $installed_file
-  undo_symlink
-}
-
-undo_symlink() {
-  rm $HOME/.gitconfig
-  rm $HOME/.gitignore_global
-  rm $HOME/.tmux.conf
-  rm $HOME/.vimrc 
-  rm -r $HOME/.vim
-}
-
 start_debug() {
-  HOME=/home/chk/sandbox
+  HOME=/c/Bash/test1
 }
 
 check_installed() {
@@ -39,13 +14,23 @@ check_installed() {
   fi
 }
 
-main() {
-  local installed_file=$HOME/.chk_dotfiles_installed
+remove_from_bashrc() {
+  sed -i '/#__dotfiles_start/,/#__dotfiles_end/{d}' $bashrc
+}
 
-  echo "Dofiles - Uninstall"
+do_steps() {
   check_installed
-  do_run
-  echo "done"
+  remove_from_bashrc
+  rm $installed_file
+}
+
+main() {
+  start_debug
+  echo "Dofiles - Uninstall"
+  local bashrc=$HOME/.bashrc
+  local installed_file=$HOME/.chk_dotfiles_installed
+  do_steps
+  echo "Done"
 }
 
 main
