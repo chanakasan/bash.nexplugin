@@ -33,7 +33,7 @@ do_steps() {
 }
 
 main() {
-  start_debug
+  # start_debug
   echo "Dotfiles - Installation"
   local root=$HOME
   local bashrc="$root/.bashrc"

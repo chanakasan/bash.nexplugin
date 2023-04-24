@@ -25,7 +25,7 @@ do_steps() {
 }
 
 main() {
-  start_debug
+  # start_debug
   echo "Dofiles - Uninstall"
   local bashrc=$HOME/.bashrc
   local installed_file=$HOME/.chk_dotfiles_installed
