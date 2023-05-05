@@ -2,9 +2,9 @@ echo "Hi - Bash"
 
 [[ $- == *i* ]] && stty -ixon
 
-source $chk_dotfiles_path/chk-bash/env
-source $chk_dotfiles_path/chk-bash/aliases
-source $chk_dotfiles_path/chk-bash/git_helpers
-source $chk_dotfiles_path/chk-bash/functions
-source $chk_dotfiles_path/chk-bash/dev_aliases
-source $chk_dotfiles_path/chk-bash/custom
+source $chk_bash_path/env
+source $chk_bash_path/aliases
+source $chk_bash_path/git_helpers
+source $chk_bash_path/functions
+source $chk_bash_path/dev_aliases
+source $chk_bash_path/custom

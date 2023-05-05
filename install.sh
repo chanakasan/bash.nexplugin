@@ -6,8 +6,10 @@ copy_to_bashrc() {
   echo "" >> $bashrc
   echo '#__dotfiles_start' >> $bashrc
   echo 'export chk_dotfiles_path=$HOME/dotfiles' >> $bashrc
-  echo 'source $chk_dotfiles_path/chk-bash/main' >> $bashrc
-  echo 'export PATH=$chk_dotfiles_path/chk-bin:$PATH' >> $bashrc
+  echo 'export chk_bash_path=$chk_dotfiles_path/chk-bash' >> $bashrc
+  echo 'export chk_bin_path=$chk_dotfiles_path/chk-bin' >> $bashrc
+  echo 'source $chk_bash_path/main' >> $bashrc
+  echo 'export PATH=$chk_bin_path:$PATH' >> $bashrc
   echo '#__dotfiles_end' >> $bashrc
   echo "" >> $bashrc
 }
