@@ -20,8 +20,10 @@
   ir = rebase -i HEAD~10
 
   fa = fetch --all
-  pom = push origin master
-  pullom = pull origin master
+  pom = push origin main
+  pullom = pull origin main
+  poma = push origin master
+  pulloma = pull origin master
 
 	d = diff
 	dc = diff --cached
