@@ -1,6 +1,4 @@
-echo "Hi - Bash"
-
-[[ $- == *i* ]] && stty -ixon
+#[[ $- == *i* ]] && stty -ixon
 
 source $chk_bash_path/env
 source $chk_bash_path/aliases
@@ -8,3 +6,5 @@ source $chk_bash_path/git_helpers
 source $chk_bash_path/functions
 source $chk_bash_path/dev_aliases
 source $chk_bash_path/custom
+
+echo "Chk Bash loaded."
