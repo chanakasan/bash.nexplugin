@@ -8,8 +8,11 @@ copy_to_bashrc() {
   echo 'export chk_dotfiles_path=$HOME/dotfiles' >> $bashrc
   echo 'export chk_bash_path=$chk_dotfiles_path/chk-bash' >> $bashrc
   echo 'export chk_bin_path=$chk_dotfiles_path/chk-bin' >> $bashrc
+  echo 'export chk_mux_bin_path=$chk_dotfiles_path/mux-bin' >> $bashrc
   echo 'source $chk_bash_path/main' >> $bashrc
+  echo ''
   echo 'export PATH=$chk_bin_path:$PATH' >> $bashrc
+  echo 'export PATH=$chk_mux_bin_path:$PATH' >> $bashrc
   echo '#__dotfiles_end' >> $bashrc
   echo "" >> $bashrc
 }
