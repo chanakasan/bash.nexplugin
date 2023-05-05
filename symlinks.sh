@@ -7,7 +7,6 @@ do_git() {
   ln -nfs $wd/_gitconfig $root/.gitconfig
   ln -nfs $wd/_gitignore_global $root/.gitignore_global
   echo "Git configs installed"
-  echo ""
 }
 
 do_tmux() {
@@ -33,13 +32,15 @@ undo_git() {
 }
 
 main() {
-  echo "Symlinks for Config files"
+  echo "Config files installation"
+  echo ""
   local dotfiles=$chk_dotfiles_path
   local root=$HOME
   do_git
   do_tmux
   do_other
-  echo "done."
+  echo "done"
+  echo ""
 }
 
 main
