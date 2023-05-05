@@ -10,7 +10,7 @@ do_git() {
 }
 
 do_tmux() {
-  local wd=$dotfiles/chk-mux
+  local wd=$dotfiles/chk-tmux
   ln -nfs $wd/index.conf $root/.tmux.conf
   echo "Tmux configs installed"
 }
