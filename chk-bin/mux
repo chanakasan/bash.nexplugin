@@ -5,11 +5,11 @@ set -e
 main() {
   local a="$1"
   if [ "$a" = "new" ]; then
-    TERM= vi $chk_dotfiles_path/chk-bin/mux-example;
+    TERM= vi $chk_dotfiles_path/mux-bin/mux-example;
   elif [ "$a" = "new2" ]; then
-    TERM= vi $chk_dotfiles_path/chk-bin/mux-example2;
+    TERM= vi $chk_dotfiles_path/mux-bin/mux-example2;
   elif [ -z "$a" ]; then
-    TERM= vi $chk_dotfiles_path/chk-bin/mux-example;
+    TERM= vi $chk_dotfiles_path/mux-bin/mux-example;
   else
     mux-$a
   fi
