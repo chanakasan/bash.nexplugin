@@ -43,8 +43,8 @@ main() {
   local bashrc="$root/.bashrc"
   local installed_file=$root/.chk_dotfiles_installed
   do_steps
-  echo ""
   echo "Done"
+  echo ""
 }
 
 main

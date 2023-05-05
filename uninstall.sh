@@ -31,6 +31,7 @@ main() {
   local installed_file=$HOME/.chk_dotfiles_installed
   do_steps
   echo "Done"
+  echo ""
 }
 
 main
