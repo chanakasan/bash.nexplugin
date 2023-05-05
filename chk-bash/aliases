@@ -1,7 +1,7 @@
 # debug
 alias rr="source $HOME/.bashrc"
-alias ed="vi $HOME/.bashrc"
-alias ed1="vi $chk_bash_dist_path/custom"
+alias ed3="vi $HOME/.bashrc"
+alias edx="vi $chk_dotfiles_path/chk-bash/custom"
 
 # safety
 alias cp="cp -i"
@@ -15,4 +15,6 @@ alias mkdir="mkdir -p"
 
 # nav
 alias ..="cd .."
+alias cd..="cd .."
+alias cd-="cd -"
 alias cdd="cd -"
