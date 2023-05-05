@@ -1,3 +1,0 @@
-# chk-bin
-
-Useful scripts
