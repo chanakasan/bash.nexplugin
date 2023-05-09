@@ -11,9 +11,10 @@ get_dotfiles_path() {
 }
 
 copy_to_bashrc() {
+  local dpath=$(get_dotfiles_path)
   echo "" >> $bashrc
   echo '#__dotfiles_start' >> $bashrc
-  echo 'export chk_dotfiles_path=$(get_dotfiles_path)' >> $bashrc
+  echo 'export chk_dotfiles_path=$dpath' >> $bashrc
   echo 'export chk_bash_path=$chk_dotfiles_path/chk-bash' >> $bashrc
   echo 'export chk_bin_path=$chk_dotfiles_path/chk-bin' >> $bashrc
   echo 'export chk_mux_bin_path=$chk_dotfiles_path/mux-bin' >> $bashrc
