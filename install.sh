@@ -2,10 +2,18 @@
 
 set -e
 
+get_dotfiles_path() {
+  if [ "$user" == "codespace" ]; then
+    echo /workspaces/.codespaces/.persistedshare/dotfiles
+  else
+    echo $HOME/dotfiles
+  fi
+}
+
 copy_to_bashrc() {
   echo "" >> $bashrc
   echo '#__dotfiles_start' >> $bashrc
-  echo 'export chk_dotfiles_path=$HOME/dotfiles' >> $bashrc
+  echo 'export chk_dotfiles_path=$(get_dotfiles_path)' >> $bashrc
   echo 'export chk_bash_path=$chk_dotfiles_path/chk-bash' >> $bashrc
   echo 'export chk_bin_path=$chk_dotfiles_path/chk-bin' >> $bashrc
   echo 'export chk_mux_bin_path=$chk_dotfiles_path/mux-bin' >> $bashrc
