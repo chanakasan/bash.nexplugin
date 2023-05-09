@@ -3,7 +3,8 @@
 set -e
 
 get_dotfiles_path() {
-  if [ "$user" == "codespace" ]; then
+  local user=$(whoami)
+  if [ "$user" = "codespace" ]; then
     echo /workspaces/.codespaces/.persistedshare/dotfiles
   else
     echo $HOME/dotfiles
@@ -42,7 +43,7 @@ do_steps() {
   check_installed
   copy_to_bashrc
   touch $installed_file
-  source $bashrc
+  . $bashrc
 }
 
 main() {
