@@ -1,6 +1,6 @@
 # dotfiles
 
-### Install dependencies**
+### dependencies
 
 **Linux**
 ```
