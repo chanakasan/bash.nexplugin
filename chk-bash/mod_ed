@@ -1,0 +1,15 @@
+# vim:ft=sh:
+
+ed() {
+  local name=${1:-a}
+  ed_$name
+}
+
+ed_x() {
+  vi $chk_bash_path/new
+}
+
+ed_a() {
+  vi $HOME/.bashrc
+}
+

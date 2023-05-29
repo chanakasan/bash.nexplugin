@@ -55,3 +55,7 @@
   #la = !git l --all
 [push]
 	default = simple
+[ui]
+	color = auto
+[init]
+	defaultBranch = main

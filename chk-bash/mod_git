@@ -49,7 +49,7 @@ alias grlast='git reset HEAD~1'
 alias gco='git checkout'
 alias grcon='git rebase --continue'
 alias grab='git rebase --abort'
-alias gir-root='git rebase -i --root'
+alias girr='git rebase -i --root'
 
 
 # stats
@@ -58,4 +58,10 @@ alias glg='git log --all --graph --oneline --decorate'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gcount='git rev-list HEAD --count'
+
+# other
+alias clone="git clone"
+alias remote="git remote"
+alias push="git push"
+alias pull="git pull"
 

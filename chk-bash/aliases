@@ -1,7 +1,5 @@
 # debug
 alias rr="source $HOME/.bashrc"
-alias ed3="vi $HOME/.bashrc"
-alias edx="vi $chk_bash_path/custom"
 
 # safety
 alias cp="cp -i"

@@ -2,9 +2,12 @@
 
 source $chk_bash_path/env
 source $chk_bash_path/aliases
-source $chk_bash_path/git_helpers
-source $chk_bash_path/functions
 source $chk_bash_path/dev_aliases
-source $chk_bash_path/custom
+source $chk_bash_path/functions
+source $chk_bash_path/new
+
+# mods
+source $chk_bash_path/mod_ed
+source $chk_bash_path/mod_git
 
 echo "Chk Bash loaded."
