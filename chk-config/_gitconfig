@@ -4,9 +4,13 @@
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]
+  # basic
 	s = status
-	l = log
+  l = log
   aa = add --all
+  
+  # most used
+  pom = push origin main
 
 	co = checkout
 	b = branch
@@ -20,10 +24,6 @@
   ir = rebase -i HEAD~10
 
   fa = fetch --all
-  pom = push origin main
-  pullom = pull origin main
-  poma = push origin master
-  pulloma = pull origin master
 
 	d = diff
 	dc = diff --cached
