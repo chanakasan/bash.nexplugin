@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+main() {
+  local s=`tmux-new-session-name`
+  tmux new-session -d -s $s -n "main"
+  tmux attach-session -t $s:1
+}
+
+main
