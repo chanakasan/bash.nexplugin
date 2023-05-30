@@ -1,2 +1,3 @@
-#--template=http://example.com/my_app_template
 #--database=postgresql
+--template=~/script/r7.rb
+--skip-bundle
