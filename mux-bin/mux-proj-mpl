@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-mux-desktop
-mux-mpl-rails
-mux-mpl-front
-mux-chrome

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 main() {
-  local wd=$HOME/sandbox
-  local s=sandbox
+  local wd=$HOME/_h
+  local s=home
   cd $wd
   
   tmux new-session -d -s $s -n "main"
