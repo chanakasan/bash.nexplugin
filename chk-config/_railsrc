@@ -1,0 +1,2 @@
+#--template=http://example.com/my_app_template
+#--database=postgresql

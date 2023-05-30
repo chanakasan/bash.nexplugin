@@ -23,6 +23,8 @@ do_other() {
   ln -nfs $wd/_gemrc $root/.gemrc
   ln -nfs $wd/_npmrc $root/.npmrc
   ln -nfs $wd/_yarnrc $root/.yanrc
+  ln -nfs $wd/_railsrc $root/.railsrc
+  ln -nfs $wd/_irbrc $root/.irbrc
   echo "Other configs installed"
 }
 
