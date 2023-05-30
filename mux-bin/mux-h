@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  local wd=$HOME/_h
+  local wd=$HOME/h_
   local s=home
   cd $wd
   
