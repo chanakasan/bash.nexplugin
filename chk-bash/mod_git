@@ -1,30 +1,47 @@
-my_git() {
-  if [ $1 ]; then
-    git "$@"
+# vim:ft=sh:
+
+g() {
+  local a="$1"
+  if [ $a ]; then
+    g-$a "${@:2}"
    else
     git status
   fi
 }
 
-gir() {
-  if [ $1 ]; then
-    git rebase -i HEAD~$1
+_nx_is_number() {
+  local var="$1"
+  if [ -n "$var" ] && [ "$var" -eq "$var" ] 2>/dev/null; then
+    echo "true"
   else
-    git rebase -i HEAD~10
+    echo "false"
   fi
 }
 
-git_branch_url() {
-  echo `cat .mygiturl`/commits/`git-current-branch`
+g-ir() {
+  local v="$1"
+  local is_num=$(_nx_is_number $v)
+  if [ -z "$v" ]; then
+    git rebase -i HEAD~10
+  elif [ "$is_num" = "true" ]; then
+    git rebase -i HEAD~$1
+  elif [ "$v" = "root" ]; then
+    git rebase -i --root
+  else
+    echo "arg must be an number"
+  fi
 }
 
-# read
-alias git-current-branch="git symbolic-ref --short HEAD"
-alias g='git status'
-alias ga='git add'
-alias gaa='git add --all'
-alias gaaa='git add --all'
-
+g-add() {
+  local v="$1"
+  if [ -z "$v" ]; then
+    git add --update .
+  elif [ "$v" = "all" ]; then
+    git add --all
+  else
+    git add "$@"
+  fi
+}
 
 # write
 alias gb='git branch'
@@ -49,8 +66,6 @@ alias grl='git reset HEAD~1'
 alias gco='git checkout'
 alias grcon='git rebase --continue'
 alias grab='git rebase --abort'
-alias girr='git rebase -i --root'
-
 
 # stats
 alias gl='git log'
@@ -64,4 +79,12 @@ alias clone="git clone"
 alias remote="git remote"
 alias push="git push"
 alias pull="git pull"
+
+g-branch-url() {
+  echo `cat .mygiturl`/commits/`g-branch`
+}
+
+g-branch() {
+  git symbolic-ref --short HEAD
+}
 

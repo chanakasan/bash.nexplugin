@@ -1,0 +1,12 @@
+
+g-add() {
+  local v="$1"
+  if [ -z "$v" ]; then
+    git add --update
+  elif [ "$v" = "all" ]; then
+    git add --all
+  else
+    git add "$@"
+  fi
+}
+
