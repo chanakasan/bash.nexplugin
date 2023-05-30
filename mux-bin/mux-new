@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+vi $chk_dotfiles_path/mux-bin/mux-example
+

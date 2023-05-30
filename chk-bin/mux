@@ -6,8 +6,6 @@ main() {
   local a="$1"
   if [ -z "$a" ]; then
     tmux-attach2
-  elif [ "$a" = "new" ]; then
-    vi $chk_dotfiles_path/mux-bin/mux-example;
   else
     mux-$a
   fi
