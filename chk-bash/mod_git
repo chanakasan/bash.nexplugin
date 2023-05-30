@@ -45,7 +45,7 @@ alias gc-rev='git commit -m "revision"'
 
 # danger
 alias gr='git reset'
-alias grlast='git reset HEAD~1'
+alias grl='git reset HEAD~1'
 alias gco='git checkout'
 alias grcon='git rebase --continue'
 alias grab='git rebase --abort'
