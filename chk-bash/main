@@ -10,4 +10,4 @@ source $chk_bash_path/new
 source $chk_bash_path/mod_ed
 source $chk_bash_path/mod_git
 
-echo "Chk Bash loaded."
+echo "Bash loaded."

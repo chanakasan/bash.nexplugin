@@ -1,20 +1,21 @@
 # vim:ft=sh:
 
+g-help() {
+  echo '""""""""""""""""""""""""""""""'
+  echo '" mod_git '
+  echo '""""""""""""""""""""""""""""""'
+  echo ""
+  echo "sub commands:"
+  echo "- add"
+  echo "- com"
+}
+
 g() {
   local a="$1"
   if [ $a ]; then
     g-$a "${@:2}"
    else
     git status
-  fi
-}
-
-_nx_is_number() {
-  local var="$1"
-  if [ -n "$var" ] && [ "$var" -eq "$var" ] 2>/dev/null; then
-    echo "true"
-  else
-    echo "false"
   fi
 }
 
@@ -43,7 +44,15 @@ g-add() {
   fi
 }
 
-gc() {
+g-rev() {
+  git commit -m "rev" "$@"
+}
+
+g-first() {
+  git commit -m "first" "$@"
+}
+
+g-com() {
   local v="$1"
   if [ -z "$v" ]; then
     echo "gc: missing args"
@@ -60,36 +69,70 @@ gc() {
   fi
 }
 
-# write
-alias gb='git branch'
-alias gpushb='git push origin HEAD'
-alias git-cherry='git cherry-pick'
-alias gt='git tag -a -m'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# helpers
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+g-r() {
+  git reset "$@"
+}
 
+g-rl() {
+  git reset HEAD~1
+}
 
-# danger
-alias gr='git reset'
-alias grl='git reset HEAD~1'
-alias gco='git checkout'
-alias grcon='git rebase --continue'
-alias grab='git rebase --abort'
+g-co() {
+  git checkout "$@"
+}
 
-# stats
-alias gl='git log'
-alias glg='git log --all --graph --oneline --decorate'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gcount='git rev-list HEAD --count'
+g-rcon() {
+  git rebase --continue
+}
 
-# other
+g-rabort() {
+  git rebase --abort
+}
+
+g-l() {
+  git log "$@"
+}
+
+g-lg() {
+  git log --all --graph --oneline --decorate
+}
+
+g-diff() {
+  git diff "$@"
+}
+
+g-dc() {
+  git diff --cached "$@"
+}
+
+g-count() {
+  git rev-list HEAD --count
+}
+
+g-b() {
+  git branch "$@"
+}
+
+g-tag() {
+  git tag -a -m "$@"
+}
+
+g-cherry() {
+  git cherry-pick "$@"
+}
+
+g-init() {
+  git init "$@"
+}
+
+# shortcuts
 alias clone="git clone"
 alias remote="git remote"
 alias push="git push"
 alias pull="git pull"
-
-g-branch-url() {
-  echo `cat .mygiturl`/commits/`g-branch`
-}
 
 g-branch() {
   git symbolic-ref --short HEAD
