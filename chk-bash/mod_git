@@ -19,6 +19,9 @@ g() {
   fi
 }
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# helpers
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 g-ir() {
   local v="$1"
   local is_num=$(_nx_is_number $v)
@@ -44,20 +47,14 @@ g-add() {
   fi
 }
 
-g-rev() {
-  git commit -m "rev" "$@"
-}
-
-g-first() {
-  git commit -m "first" "$@"
+g-amend() {
+  git commit -v --amend "$@"
 }
 
 g-com() {
   local v="$1"
   if [ -z "$v" ]; then
     echo "gc: missing args"
-  elif [ "$v" = "am" ]; then
-    git commit --amend "${@:2}"
   elif [ "$v" = "first" ]; then
     git commit -m "first commit"
   elif [ "$v" = "wip" ]; then
@@ -69,14 +66,23 @@ g-com() {
   fi
 }
 
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# helpers
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-g-r() {
+g-show() {
+  git show "$@"
+}
+
+g-rev() {
+  git commit -m "rev" "$@"
+}
+
+g-first() {
+  git commit -m "first" "$@"
+}
+
+g-re() {
   git reset "$@"
 }
 
-g-rl() {
+g-rel() {
   git reset HEAD~1
 }
 
@@ -92,12 +98,13 @@ g-rabort() {
   git rebase --abort
 }
 
-g-l() {
-  git log "$@"
-}
-
-g-lg() {
-  git log --all --graph --oneline --decorate
+g-log() {
+  local v="$1"
+  if [ "$v" = "g" ]; then
+    git log --all --graph --oneline --decorate
+  else
+    git log "$@"
+  fi
 }
 
 g-diff() {
@@ -110,10 +117,6 @@ g-dc() {
 
 g-count() {
   git rev-list HEAD --count
-}
-
-g-b() {
-  git branch "$@"
 }
 
 g-tag() {
@@ -133,6 +136,7 @@ alias clone="git clone"
 alias remote="git remote"
 alias push="git push"
 alias pull="git pull"
+alias branch="git branch"
 
 g-branch() {
   git symbolic-ref --short HEAD

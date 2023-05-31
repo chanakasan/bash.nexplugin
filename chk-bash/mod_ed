@@ -1,15 +1,27 @@
 # vim:ft=sh:
 
 ed() {
-  local name=${1:-a}
-  ed_$name
-}
-
-ed_x() {
-  vi $chk_bash_path/new
+  local v1="${1:-a}"
+  local v2="$2"
+  local file=$chk_bash_path/$v1
+  local tmux=$chk_dotfiles_path/chk-tmux/main.conf
+  if [ -f "$file" ]; then
+    vi $file
+  elif [ "$v1" = "mod" ]; then
+    ed_mod "$v2"
+  elif [ "$v1" = "tmux" ]; then
+    vi $tmux
+  else
+    vi ed_$v1
+  fi
 }
 
 ed_a() {
   vi $HOME/.bashrc
+}
+
+ed_mod() {
+  local v="${1:-ed}"
+  vi $chk_bash_path/mod_$v
 }
 
