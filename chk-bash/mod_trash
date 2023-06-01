@@ -5,9 +5,9 @@ trash() {
   mkdir -p $trash
 
   if [ "$v1" = "del" ]; then
-    echo rm -rf $trash/$v2
+    rm -rf $trash/$v2
   else
-    echo mv "$@" $trash/
+    mv "$@" $trash/
   fi
 }
 
