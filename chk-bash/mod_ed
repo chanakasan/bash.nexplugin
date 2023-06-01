@@ -12,7 +12,7 @@ ed() {
   elif [ "$v1" = "tmux" ]; then
     vi $tmux
   else
-    vi ed_$v1
+    ed_$v1
   fi
 }
 
