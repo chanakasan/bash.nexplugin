@@ -1,10 +1,17 @@
-# vim:ft=sh:
+g() {
+  local a="$1"
+  if [ $a ]; then
+    g-$a "${@:2}"
+   else
+    git status
+  fi
+}
 
 ed() {
   local v1="${1:-a}"
   local v2="$2"
   local file=$chk_bash_path/$v1
-  local tmux=$chk_dotfiles_path/chk-tmux/
+  local tmux=$chk_dotfiles_path/chk-tmux/main.conf
   if [ -f "$file" ]; then
     vi $file
   elif [ "$v1" = "mod" ]; then
@@ -15,13 +22,3 @@ ed() {
     ed_$v1
   fi
 }
-
-ed_a() {
-  vi $HOME/.bashrc
-}
-
-ed_mod() {
-  local v="${1:-ed}"
-  vi $chk_bash_path/mod_$v
-}
-

@@ -1,0 +1,12 @@
+_() {
+  local v1="${1:-_nil_}"
+  local v2="$2"
+  if [ "$v1" = "dotfiles" ]; then
+    cd $HOME/dotfiles
+  elif [ "$v1" = "sites" ]; then
+    cd $HOME/sites
+  else
+    _nex_$v1
+  fi
+}
+

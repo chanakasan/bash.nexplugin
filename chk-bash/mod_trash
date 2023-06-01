@@ -1,7 +1,7 @@
 trash() {
   local trash=$HOME/trash
   local v1="$1"
-  local v2="${1:-_none_}"
+  local v2="${2:-_none_}"
   mkdir -p $trash
 
   if [ "$v1" = "del" ]; then
