@@ -5,6 +5,8 @@ _() {
     cd $HOME/dotfiles
   elif [ "$v1" = "sites" ]; then
     cd $HOME/sites
+  elif [ "$v1" = "temp" ]; then
+    cd $HOME/temp
   else
     _nex_$v1
   fi
