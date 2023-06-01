@@ -100,7 +100,9 @@ g-rabort() {
 
 g-log() {
   local v="$1"
-  if [ "$v" = "g" ]; then
+  if [ -z "$v" ]; then
+    git log -3
+  elif [ "$v" = "g" ]; then
     git log --all --graph --oneline --decorate
   else
     git log "$@"

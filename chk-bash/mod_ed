@@ -4,11 +4,14 @@ ed() {
   local v1="${1:-a}"
   local v2="$2"
   local file=$chk_bash_path/$v1
+  local mod=$chk_bash_path/mod_$v1
   local tmux=$chk_dotfiles_path/chk-tmux/
   if [ -f "$file" ]; then
     vi $file
-  elif [ "$v1" = "mod" ]; then
-    ed_mod "$v2"
+  elif [ -f "$mod" ]; then
+    vi $mod
+  # elif [ "$v1" = "mod" ]; then
+  #   ed_mod "$v2"
   elif [ "$v1" = "tmux" ]; then
     vi $tmux
   else
@@ -20,8 +23,8 @@ ed_a() {
   vi $HOME/.bashrc
 }
 
-ed_mod() {
-  local v="${1:-ed}"
-  vi $chk_bash_path/mod_$v
-}
+# ed_mod() {
+#   local v="${1:-ed}"
+#   vi $chk_bash_path/mod_$v
+# }
 
