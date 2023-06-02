@@ -2,21 +2,21 @@
 
 set -e
 
-do_git() {
-  local wd=$dotfiles/chk-config
+do_tmux() {
+  local wd=$dotfiles/tmux
+  ln -nfs $wd/index.conf $root/.tmux.conf
+  echo "Tmux configs installed"
+}
+
+do_config_git() {
+  local wd=$dotfiles/config
   ln -nfs $wd/_gitconfig $root/.gitconfig
   ln -nfs $wd/_gitignore_global $root/.gitignore_global
   echo "Git configs installed"
 }
 
-do_tmux() {
-  local wd=$dotfiles/chk-tmux
-  ln -nfs $wd/index.conf $root/.tmux.conf
-  echo "Tmux configs installed"
-}
-
-do_other() {
-  local wd=$dotfiles/chk-config
+do_config() {
+  local wd=$dotfiles/config
   ln -nfs $wd/_ackrc $root/.ackrc
   ln -nfs $wd/_agignore $root/.agignore
   ln -nfs $wd/_eslintrc.json $root/.eslintrc.json
@@ -38,9 +38,9 @@ main() {
   echo ""
   local dotfiles=$chk_dotfiles_path
   local root=$HOME
-  do_git
   do_tmux
-  do_other
+  do_config_git
+  do_config
   echo "done"
   echo ""
 }

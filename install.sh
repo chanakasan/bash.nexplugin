@@ -16,12 +16,12 @@ remove_from_bashrc() {
 }
 
 copy_to_bashrc() {
-  local dpath=$(get_dotfiles_path)
+  local df_path=$(get_dotfiles_path)
   echo "" >> $bashrc
   echo '#__dotfiles_start' >> $bashrc
-  echo 'export chk_dotfiles_path='$dpath >> $bashrc
-  echo 'export chk_bash_path=$chk_dotfiles_path/chk-bash' >> $bashrc
-  echo 'export chk_bin_path=$chk_dotfiles_path/chk-bin' >> $bashrc
+  echo 'export chk_dotfiles_path='$df_path >> $bashrc
+  echo 'export chk_bash_path=$chk_dotfiles_path/bash' >> $bashrc
+  echo 'export chk_bin_path=$chk_dotfiles_path/bin' >> $bashrc
   echo 'export chk_bin_mux_path=$chk_dotfiles_path/bin-mux' >> $bashrc
   echo 'source $chk_bash_path/main' >> $bashrc
   echo ''
