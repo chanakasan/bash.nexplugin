@@ -3,15 +3,29 @@
 set -e
 
 main() {
-  local a="$1"
+  local v1="$1"
   local example=$chk_dotfiles_path/mux-bin/mux-example
-  if [ -z "$a" ]; then
+  if [ -z "$v1" ]; then
     mux-home
-  elif [ "$a" = "ex" ]; then
+  elif [ "$v1" = "new" ]; then
+    mux_new
+  elif [ "$v1" = "create" ]; then
+    mux_create
+  elif [ "$v1" = "ex" ]; then
     vi $example
   else
-    mux-$a
+    mux-$v1
   fi
+}
+
+mux_new() {
+  local s=`tmux-new-session-name`
+  tmux new-session -d -s $s -n "main"
+  tmux attach-session -t $s:1
+}
+
+mux_create() {
+ vi $chk_dotfiles_path/mux-bin/mux-example
 }
 
 main "$@"

@@ -9,7 +9,8 @@ source $chk_bash_path/new
 # mods
 source $chk_bash_path/mod_ed
 source $chk_bash_path/mod_git
-source $chk_bash_path/mod_trash
+source $chk_bash_path/mod_tmux
 source $chk_bash_path/mod_nex
+source $chk_bash_path/mod_trash
 
 echo "Bash loaded."
