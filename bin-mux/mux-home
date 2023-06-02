@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 main() {
-  local wd=$HOME/hq
+  local wd=$HOME
   local s=home
   cd $wd
   
-  tmux new-session -d -s $s -n "hq"
+  tmux new-session -d -s $s -n "@user"
   #---------------------------------------------------------------------------
-  tmux new-window -t $s:2 -n "user" "cd ~; bash -i"
-  tmux new-window -t $s:3 -n "dotfiles" "cd dotfiles; bash -i"
-  tmux new-window -t $s:4 -n "sites" "cd sites; bash -i"
-  tmux new-window -t $s:5 -n "repos" "cd repos; bash -i"
-  tmux new-window -t $s:6 -n "dev" "cd dev; bash -i"
+  # tmux new-window -t $s:2 -n "@user" "cd ~; bash -i"
+  # tmux new-window -t $s:3 -n "dotfiles" "cd dotfiles; bash -i"
+  # tmux new-window -t $s:4 -n "sites" "cd sites; bash -i"
+  # tmux new-window -t $s:5 -n "repos" "cd repos; bash -i"
+  # tmux new-window -t $s:6 -n "dev" "cd dev; bash -i"
   #---------------------------------------------------------------------------
   tmux select-window -t $s:1
   tmux attach -t $s:1 

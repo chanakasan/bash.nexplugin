@@ -1,14 +1,12 @@
 _() {
   local v1="${1:-_nil_}"
-  local v2="$2"
-  if [ "$v1" = "dotfiles" ] || [ "$v1" = "dot" ]; then
-    cd $HOME/dotfiles
-  elif [ "$v1" = "sites" ]; then
-    cd $HOME/sites
-  elif [ "$v1" = "temp" ]; then
-    cd $HOME/temp
-  else
-    _nex_$v1
-  fi
+  _nex_$v1 "${@:2}"
 }
 
+_nex_man() {
+  _man "$@"
+}
+
+_man() {
+  tmux popup -E -w 95% -h 100% man $@
+}
