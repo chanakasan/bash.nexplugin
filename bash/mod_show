@@ -1,0 +1,19 @@
+show() {
+  local v="$1"
+  if [ -z "$v" ]; then
+    echo "mod_show: missing args <subcommand>" 
+  else
+    show_$v "${@:2}"
+  fi
+}
+
+show_windows() {
+  tmux list-windows
+}
+
+show_sessions() {
+  tmux list-sessions -F '#{session_name}' |\
+  sed '/^$/d' |\
+  fzf --reverse |\
+  xargs tmux switch-client -t
+}
