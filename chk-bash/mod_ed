@@ -10,12 +10,10 @@ ed() {
     vi $file
   elif [ -f "$mod" ]; then
     vi $mod
-  # elif [ "$v1" = "mod" ]; then
-  #   ed_mod "$v2"
   elif [ "$v1" = "tmux" ]; then
     vi $tmux
   else
-    ed_$v1
+    ed_$v1 "${@:2}"
   fi
 }
 
@@ -23,8 +21,21 @@ ed_a() {
   vi $HOME/.bashrc
 }
 
-# ed_mod() {
-#   local v="${1:-ed}"
-#   vi $chk_bash_path/mod_$v
-# }
+ed_bin() {
+  local v="$1"
+  if [ -z "$v" ]; then
+    vi $chk_dotfiles_path/chk-bin
+  else
+    vi $chk_dotfiles_path/chk-bin/$v
+  fi
+}
+
+ed_mux() {
+  local v="$1"
+  if [ -z "$v" ]; then
+    vi $chk_dotfiles_path/mux-bin
+  else
+    vi $chk_dotfiles_path/mux-bin/mux-$v
+  fi
+}
 

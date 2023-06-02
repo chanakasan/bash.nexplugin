@@ -4,11 +4,14 @@ set -e
 
 main() {
   local a="$1"
+  local example=$chk_dotfiles_path/mux-bin/mux-example
   if [ -z "$a" ]; then
-    tmux-attach2
+    mux-home
+  elif [ "$a" = "ex" ]; then
+    vi $example
   else
     mux-$a
   fi
 }
 
-main $@
+main "$@"
