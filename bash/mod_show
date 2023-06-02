@@ -1,3 +1,5 @@
+#vim:ft=sh:
+
 show() {
   local v="$1"
   if [ -z "$v" ]; then
@@ -7,8 +9,20 @@ show() {
   fi
 }
 
+show_win() {
+  show_windows
+}
+
+show_ss() {
+  show_sessions
+}
+
 show_windows() {
-  tmux list-windows
+  tmux list-windows -F '#I: #{window_name}' |\
+  sed '/:.$/d' |\
+  # sed '/^./&' |\
+  fzf --reverse
+  # xargs echo tmux select-window -t
 }
 
 show_sessions() {
