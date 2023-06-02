@@ -9,4 +9,6 @@ _nx_is_number() {
   fi
 }
 
-
+bashrc() {
+  vi $HOME/.bashrc
+}

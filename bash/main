@@ -1,10 +1,12 @@
 #[[ $- == *i* ]] && stty -ixon
 
+# init
+source $chk_bash_path/init
+
+# base
 source $chk_bash_path/env
 source $chk_bash_path/aliases
-source $chk_bash_path/dev_aliases
 source $chk_bash_path/functions
-source $chk_bash_path/new
 
 # mods
 source $chk_bash_path/mod_ed
@@ -12,5 +14,11 @@ source $chk_bash_path/mod_git
 source $chk_bash_path/mod_tmux
 source $chk_bash_path/mod_nex
 source $chk_bash_path/mod_trash
+source $chk_bash_path/mod_new
+
+# other
+source $chk_bash_path/dev_aliases
+source $chk_bash_path/wsl
+source $chk_bash_path/user_bash_mods
 
 echo "Bash loaded."

@@ -1,0 +1,18 @@
+new() {
+  local v="$1"
+  if [ "$v" = "mod" ]; then
+    new_mod "${@:2}"
+  else
+    echo "mod_new: missing args" 
+  fi
+}
+
+new_mod() {
+  local v="$1"
+  local mod=$chk_bash_mods_path/$v.mod
+  if [ -z "$v" ]; then
+    "mod_bashrc: missing args"
+  else
+    vi $mod
+  fi
+}

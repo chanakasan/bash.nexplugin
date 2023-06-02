@@ -35,6 +35,10 @@ start_debug() {
   HOME=$hq/box1
 }
 
+mark_installed() {
+  touch $installed_file
+}
+
 check_installed() {
   if [ -f "$installed_file" ]; then
     echo "Error: Already installed"
@@ -46,8 +50,6 @@ check_installed() {
 do_steps() {
   remove_from_bashrc
   copy_to_bashrc
-  touch $installed_file
-  . $bashrc
 }
 
 main() {
@@ -58,6 +60,7 @@ main() {
   local installed_file=$root/.chk_dotfiles_installed
   do_steps
   echo "Done"
+  echo "Please run 'reload'"
   echo ""
 }
 

@@ -5,28 +5,27 @@ ed() {
   local v2="$2"
   local file=$chk_bash_path/$v1
   local mod=$chk_bash_path/mod_$v1
-  local tmux=$chk_dotfiles_path/chk-tmux/
   if [ -f "$file" ]; then
     vi $file
   elif [ -f "$mod" ]; then
     vi $mod
   elif [ "$v1" = "tmux" ]; then
-    vi $tmux
+    vi $chk_tmux_path
   else
     ed_$v1 "${@:2}"
   fi
 }
 
 ed_a() {
-  vi $HOME/.bashrc
+  vi $chk_bash_mods_path/new.mod
 }
 
 ed_bin() {
   local v="$1"
   if [ -z "$v" ]; then
-    vi $chk_dotfiles_path/chk-bin
+    vi $chk_dotfiles_path/bin
   else
-    vi $chk_dotfiles_path/chk-bin/$v
+    vi $chk_dotfiles_path/bin/$v
   fi
 }
 
@@ -38,4 +37,3 @@ ed_mux() {
     vi $chk_dotfiles_path/mux-bin/mux-$v
   fi
 }
-

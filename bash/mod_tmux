@@ -1,4 +1,4 @@
 name() {
   local name=$(tmux lsw -F '#{window_name}#{window_active}'|sed -n 's|^\(.*\)1$|\1|p')
-  echo $name
+  echo "Window = $name"
 }

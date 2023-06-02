@@ -1,0 +1,3 @@
+for f in $chk_bash_mods_path/*.mod; do
+ source $f
+done

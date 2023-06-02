@@ -1,0 +1,9 @@
+#""""""""""""""""""""""""""""""""""""""""""""""""""
+# Init
+#""""""""""""""""""""""""""""""""""""""""""""""""""
+
+export chk_bash_mods_path="$HOME/bash_mods"
+
+# bash_mods
+mkdir -p $chk_bash_mods_path
+touch $chk_bash_mods_path/new

@@ -7,7 +7,7 @@ main() {
   
   tmux new-session -d -s $s -n "hq"
   #---------------------------------------------------------------------------
-  tmux new-window -t $s:2 -n "@user" "cd ~; bash -i"
+  tmux new-window -t $s:2 -n "user" "cd ~; bash -i"
   tmux new-window -t $s:3 -n "dotfiles" "cd dotfiles; bash -i"
   tmux new-window -t $s:4 -n "sites" "cd sites; bash -i"
   tmux new-window -t $s:5 -n "repos" "cd repos; bash -i"
