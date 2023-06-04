@@ -5,7 +5,7 @@ main() {
   local s=home
   cd $wd
   
-  tmux new-session -d -s $s -n "@user"
+  tmux new-session -d -s $s -n "user"
   #---------------------------------------------------------------------------
   # tmux new-window -t $s:2 -n "@user" "cd ~; bash -i"
   # tmux new-window -t $s:3 -n "dotfiles" "cd dotfiles; bash -i"
