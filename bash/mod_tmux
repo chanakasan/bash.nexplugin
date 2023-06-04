@@ -2,3 +2,26 @@ name() {
   local name=$(tmux lsw -F '#{window_name}#{window_active}'|sed -n 's|^\(.*\)1$|\1|p')
   echo "Window = $name"
 }
+
+win() {
+  show_windows
+}
+
+sess() {
+  show_sessions
+}
+
+windows() {
+  tmux list-windows -F '#I: #{window_name}' |\
+  sed '/:.$/d' |\
+  # sed '/^./&' |\
+  fzf --reverse
+  # xargs echo tmux select-window -t
+}
+
+sessions() {
+  tmux list-sessions -F '#{session_name}' |\
+  sed '/^$/d' |\
+  fzf --reverse |\
+  xargs tmux switch-client -t
+}

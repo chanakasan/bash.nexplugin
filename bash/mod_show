@@ -10,24 +10,10 @@ show() {
 }
 
 show_win() {
-  show_windows
+  windows
 }
 
-show_ss() {
-  show_sessions
+show_sess() {
+  sessions
 }
 
-show_windows() {
-  tmux list-windows -F '#I: #{window_name}' |\
-  sed '/:.$/d' |\
-  # sed '/^./&' |\
-  fzf --reverse
-  # xargs echo tmux select-window -t
-}
-
-show_sessions() {
-  tmux list-sessions -F '#{session_name}' |\
-  sed '/^$/d' |\
-  fzf --reverse |\
-  xargs tmux switch-client -t
-}
