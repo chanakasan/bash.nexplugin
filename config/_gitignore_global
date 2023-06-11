@@ -60,7 +60,6 @@ vendor/*
 .idea/
 *.iml
 *.xcodeproj/
-.vscode/
 
 # other #
 #########

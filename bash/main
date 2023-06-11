@@ -16,6 +16,8 @@ source $chk_bash_path/mod_nex
 source $chk_bash_path/mod_trash
 source $chk_bash_path/mod_new
 source $chk_bash_path/mod_show
+source $chk_bash_path/mod_repl
+source $chk_bash_path/mod_lang
 
 # other
 source $chk_bash_path/dev_aliases

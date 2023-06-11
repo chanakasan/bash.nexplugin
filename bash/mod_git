@@ -51,23 +51,13 @@ g-amend() {
   git commit -v --amend "$@"
 }
 
-g-com() {
-  local v="$1"
-  if [ -z "$v" ]; then
-    echo "gc: missing args"
-  elif [ "$v" = "first" ]; then
-    git commit -m "first commit"
-  elif [ "$v" = "wip" ]; then
-    git commit -m "WIP"
-  elif [ "$v" = "rev" ]; then
-    git commit -m "rev"
-  else
-    git commit -v "$@"
-  fi
-}
-
 g-show() {
   git show "$@"
+}
+
+# commit start
+g-wip() {
+  git commit -m "WIP" "$@"
 }
 
 g-rev() {
@@ -77,6 +67,7 @@ g-rev() {
 g-first() {
   git commit -m "first" "$@"
 }
+# commit start
 
 g-re() {
   git reset "$@"
@@ -131,6 +122,10 @@ g-cherry() {
 
 g-init() {
   git init "$@"
+}
+
+g-pom() {
+  git push origin main "$@"
 }
 
 # shortcuts

@@ -1,0 +1,11 @@
+repl() {
+  local v="$1"
+  local dir=$HOME/repl
+  if [ -z "$v" ]; then
+    echo "mod_repl: missing args <name>" 
+  else
+    code $dir/$v
+  fi
+}
+
+

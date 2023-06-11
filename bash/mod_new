@@ -25,3 +25,33 @@ new_window() {
     tmux new-window -n $v
   fi
 }
+
+_new_vite() {
+  local name="$1"
+  local tpl="$2"
+  if [ -z "$name" ]; then
+    echo "new_vite: must provide a app name"
+    return
+  elif [ -z "$tpl" ]; then
+    echo "new_vite: must provide a template name"
+    return
+  else
+    echo "=> Creating a Vite project"
+    echo "Using template: $tpl"
+    echo ""
+    yarn create vite $name --template $tpl
+  fi
+}
+
+new_react() {
+  _new_vite "$1" react
+}
+
+new_vue() {
+  _new_vite "$1" vue
+}
+
+new_mux() {
+  mux new
+}
+

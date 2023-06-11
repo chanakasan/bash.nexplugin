@@ -1,0 +1,16 @@
+lang() {
+  local v="$1"
+  local dir=$HOME/lang/$v
+  if [ -z "$v" ]; then
+    echo "mod_lang: missing args <name>" 
+    return
+  fi
+  if [ ! -d "$dir" ]; then
+    echo "mod_lang: lang not found '$v'" 
+    return
+  fi
+
+  code $dir
+}
+
+
