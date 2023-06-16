@@ -26,6 +26,30 @@ new_window() {
   fi
 }
 
+new_react() {
+  _new_vite "$1" react
+}
+
+new_vue() {
+  _new_vite "$1" vue
+}
+
+new_mux() {
+  mux new
+}
+
+new_jekyll() {
+  local dir="$1"
+  if [ -z "$dir" ]; then
+    echo "new_jekyll: must provide a site name"
+    return
+  fi
+  cp -r ~/new/tpl-jk-tailwind-blank $dir
+  cd $dir
+  git status
+}
+
+# private
 _new_vite() {
   local name="$1"
   local tpl="$2"
@@ -41,17 +65,5 @@ _new_vite() {
     echo ""
     yarn create vite $name --template $tpl
   fi
-}
-
-new_react() {
-  _new_vite "$1" react
-}
-
-new_vue() {
-  _new_vite "$1" vue
-}
-
-new_mux() {
-  mux new
 }
 
