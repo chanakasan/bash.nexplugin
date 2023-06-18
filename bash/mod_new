@@ -63,7 +63,7 @@ _new_vite() {
     echo "=> Creating a Vite project"
     echo "Using template: $tpl"
     echo ""
-    yarn create vite $name --template $tpl
+    npx yarn create vite $name --template $tpl
   fi
 }
 

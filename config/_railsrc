@@ -1,3 +1,3 @@
 #--database=postgresql
---template=~/script/r7.rb
+#--template=~/script/r7.rb
 --skip-bundle

@@ -21,20 +21,6 @@ open_lang() {
   code $dir
 }
 
-open_repl() {
-  local v="$1"
-  local dir=$HOME/repl/$v
-  if [ -z "$v" ]; then
-    echo "mod_open: open_repl: missing args <name>" 
-    return
-  fi
-  if [ ! -d "$dir" ]; then
-    echo "mod_open: repl not found '$v'" 
-    return
-  fi
-  code $dir
-}
-
 open_code() {
   local v="$1"
   if [ -z "$v" ]; then

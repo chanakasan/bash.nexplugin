@@ -24,6 +24,7 @@ copy_to_bashrc() {
   echo 'export chk_bin_path=$chk_dotfiles_path/bin' >> $bashrc
   echo 'export chk_bin_mux_path=$chk_dotfiles_path/bin-mux' >> $bashrc
   echo 'source $chk_bash_path/main' >> $bashrc
+  echo 'source $chk_bash_path/optional' >> $bashrc
   echo ''
   echo 'export PATH=$chk_bin_path:$PATH' >> $bashrc
   echo 'export PATH=$chk_bin_mux_path:$PATH' >> $bashrc
