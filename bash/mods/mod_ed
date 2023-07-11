@@ -4,13 +4,16 @@ ed() {
   local v1="${1:-a}"
   local v2="$2"
   local file=$chk_bash_path/$v1
-  local mod=$chk_bash_path/mod_$v1
+  local mod=$chk_bash_path/mods/mod_$v1
+  local mods_path=$chk_bash_path/mods/
   if [ -f "$file" ]; then
     vi $file
   elif [ -f "$mod" ]; then
     vi $mod
   elif [ "$v1" = "tmux" ]; then
     vi $chk_tmux_path
+  elif [ "$v1" = "mod" ]; then
+    vi $mods_path
   else
     ed_$v1 "${@:2}"
   fi

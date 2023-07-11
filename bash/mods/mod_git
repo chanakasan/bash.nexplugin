@@ -11,18 +11,21 @@ g-help() {
 }
 
 g() {
-  local a="$1"
-  if [ $a ]; then
-    g-$a "${@:2}"
-   else
+  local v="$1"
+  local fn=g-$v
+  if [ -z "$v" ]; then
     git status
+  elif [[ $(type -t $fn ) == function ]]; then
+    $fn "${@:2}"
+  else
+    git "$@"
   fi
 }
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # helpers
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-g-ir() {
+gir() {
   local v="$1"
   local is_num=$(_nx_is_number $v)
   if [ -z "$v" ]; then
@@ -31,6 +34,10 @@ g-ir() {
     git rebase -i HEAD~$1
   elif [ "$v" = "root" ]; then
     git rebase -i --root
+  elif [ "$v" = "con" ]; then
+    git rebase --continue
+  elif [ "$v" = "abort" ]; then
+    git rebase --abort
   else
     echo "arg must be an number"
   fi
@@ -69,11 +76,7 @@ g-first() {
 }
 # commit start
 
-g-re() {
-  git reset "$@"
-}
-
-g-rel() {
+g-rl() {
   git reset HEAD~1
 }
 
@@ -81,27 +84,13 @@ g-co() {
   git checkout "$@"
 }
 
-g-rcon() {
-  git rebase --continue
-}
-
-g-rabort() {
-  git rebase --abort
-}
-
-g-log() {
+gl() {
   local v="$1"
   if [ -z "$v" ]; then
     git log -3
-  elif [ "$v" = "g" ]; then
-    git log --all --graph --oneline --decorate
   else
     git log "$@"
   fi
-}
-
-g-diff() {
-  git diff "$@"
 }
 
 g-dc() {
@@ -128,12 +117,19 @@ g-pom() {
   git push origin main "$@"
 }
 
-# shortcuts
+# long aliases
 alias clone="git clone"
 alias remote="git remote"
 alias push="git push"
 alias pull="git pull"
 alias branch="git branch"
+
+# short aliases
+alias gd="git diff"
+alias gr="git reset"
+alias gc="git commit"
+alias ga="git add"
+alias glg="git log --all --graph --oneline --decorate"
 
 g-branch() {
   git symbolic-ref --short HEAD
