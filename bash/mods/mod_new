@@ -27,6 +27,22 @@ new_window() {
 }
 
 new_react() {
+  local name="$1"
+  if [ -z "$name" ]; then
+    echo "new_react: must provide a app name"
+    return
+  fi
+  echo "=> Cloning React template"
+  if [ -d "$name" ]; then
+    echo "Error: dir $name already exists"
+    return
+  fi
+  npx degit --mode=git NexFactory/react-storybook -- $name
+  echo "=> Done"
+  echo ""
+}
+
+new_react2() {
   _new_vite "$1" react
 }
 

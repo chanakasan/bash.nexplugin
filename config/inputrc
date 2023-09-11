@@ -5,7 +5,7 @@
 "\ej": next-history
 
 # clear screen on enter
-"\C-m": "\C-l\C-j"
+#"\C-m": "\C-l\C-j"
 
 # disabled
 #"\C\C-m": "\C-j"
