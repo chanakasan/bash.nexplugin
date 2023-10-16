@@ -4,5 +4,5 @@ for f in $chk_bash_path/mods/*; do
 done
 
 # other
-source $chk_bash_path/dev_aliases
-source $chk_bash_path/wsl
+source $chk_bash_path/opt/dev_aliases
+source $chk_bash_path/opt/wsl

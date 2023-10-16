@@ -35,9 +35,9 @@ ed_bin() {
 ed_mux() {
   local v="$1"
   if [ -z "$v" ]; then
-    vi $chk_dotfiles_path/bin-mux
+    vi $chk_dotfiles_path/mux
   else
-    vi $chk_dotfiles_path/bin-mux/mux-$v
+    vi $chk_dotfiles_path/mux/mux-$v
   fi
 }
 
