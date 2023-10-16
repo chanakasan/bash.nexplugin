@@ -9,14 +9,14 @@
   l = log
   aa = add --all
   co = checkout
+  ff = merge --ff-only
+  noff = merge --no-ff
+  b = branch
   
   # most used
   # pom = push origin main
-  # b = branch
   # c = commit --verbose
   # amend = commit --amend
-  # ff = merge --ff-only
-  # noff = merge --no-ff
   # ir = rebase -i HEAD~10
 
   fa = fetch --all

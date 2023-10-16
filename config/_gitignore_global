@@ -67,6 +67,7 @@ tags
 
 # local #
 #########
+_stash
 _dictionary
 cypress/videos
 .agignore
