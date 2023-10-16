@@ -12,9 +12,9 @@
   ff = merge --ff-only
   noff = merge --no-ff
   b = branch
+  pom = push origin main
   
   # most used
-  # pom = push origin main
   # c = commit --verbose
   # amend = commit --amend
   # ir = rebase -i HEAD~10
