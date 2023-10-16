@@ -22,7 +22,7 @@ copy_to_bashrc() {
   echo 'export chk_dotfiles_path='$df_path >> $bashrc
   echo 'export chk_bash_path=$chk_dotfiles_path/bash' >> $bashrc
   echo 'export chk_bin_path=$chk_dotfiles_path/bin' >> $bashrc
-  echo 'export chk_bin_mux_path=$chk_dotfiles_path/bin-mux' >> $bashrc
+  echo 'export chk_bin_mux_path=$chk_dotfiles_path/mux' >> $bashrc
   echo 'source $chk_bash_path/main' >> $bashrc
   echo 'source $chk_bash_path/optional' >> $bashrc
   echo ''
