@@ -21,13 +21,12 @@ copy_to_bashrc() {
   echo '#__dotfiles_start' >> $bashrc
   echo 'export chk_dotfiles_path='$df_path >> $bashrc
   echo 'export chk_bash_path=$chk_dotfiles_path/bash' >> $bashrc
-  echo 'export chk_bin_path=$chk_dotfiles_path/bin' >> $bashrc
-  echo 'export chk_bin_mux_path=$chk_dotfiles_path/mux' >> $bashrc
   echo 'source $chk_bash_path/main' >> $bashrc
   echo 'source $chk_bash_path/optional' >> $bashrc
   echo ''
-  echo 'export PATH=$chk_bin_path:$PATH' >> $bashrc
-  echo 'export PATH=$chk_bin_mux_path:$PATH' >> $bashrc
+  echo 'export PATH=$chk_dotfiles_path/bin:$PATH' >> $bashrc
+  echo 'export PATH=$chk_dotfiles_path/mux:$PATH' >> $bashrc
+  echo 'export PATH=$chk_dotfiles_path/tmux/bin:$PATH' >> $bashrc
   echo '#__dotfiles_end' >> $bashrc
   echo "" >> $bashrc
 }

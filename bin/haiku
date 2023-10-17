@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative './haikunator.rb'
+require_relative '../lib/haikunator.rb'
 
 puts Haikunator.haikunate
