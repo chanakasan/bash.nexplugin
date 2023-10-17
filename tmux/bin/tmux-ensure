@@ -3,10 +3,11 @@
 set -e
 
 main() {
-  tmux-is-nested
-  local is_nested="$?"
+  local is_nested=$(tmux-is-nested)
   if "$is_nested" = "1"; then
-    tat
+    # do nothiin
+  else
+    # create_or_attach
   fi
 }
 

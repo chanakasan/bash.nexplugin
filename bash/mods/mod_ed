@@ -10,8 +10,6 @@ ed() {
     vi $file
   elif [ -f "$mod" ]; then
     vi $mod
-  elif [ "$v1" = "tmux" ]; then
-    vi $chk_tmux_path
   elif [ "$v1" = "mod" ]; then
     vi $mods_path
   else

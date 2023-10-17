@@ -1,3 +1,7 @@
+a() {
+  ta
+}
+
 name() {
   show_name
 }

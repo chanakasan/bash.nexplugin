@@ -2,14 +2,23 @@
 
 set +e
 
-main() {
+_get_tmux_env_statu() {
   [ -z "$TMUX" ]
   local status="$?"
-  if [ "$status" = "1" ]; then
+  echo $status
+}
+
+_echo_result() {
+  if [ "$result" = "1" ]; then
     echo true
   else
     echo false
   fi
+}
+
+main() {
+  local result=$(_get_tmux_env_statu)
+  _echo_result
   exit 0
 }
 
