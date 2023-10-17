@@ -4,10 +4,11 @@ set -e
 
 main() {
   local is_nested=$(tmux-is-nested)
-  if "$is_nested" = "1"; then
+  if [ "$is_nested" = "true" ]; then
+    echo "inside tmux"
     # do nothiin
   else
-    # create_or_attach
+    mux-home
   fi
 }
 

@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 
-set +e
-
-main() {
-  local is_nested=$(tmux-is-nested)
-  if [ "$is_nested" = "false" ]; then
-    tmux attach
-  fi
-}
-
-main
+tmux-ensure
