@@ -1,0 +1,14 @@
+main() {
+  local x=25
+  local y=10
+  local w=${2:-80%}
+  local h=${2:-80%}
+
+  if [ "$(tmux display-message -p -F "#{session_name}")" = "popup" ];then
+      tmux detach-client
+  else
+      tmux popup -d '#{pane_current_path}' -xC -yC -w$w -h$h -K -E -R "tmux attach -t popup || tmux new -s popup"
+  fi
+}
+
+main "$@"

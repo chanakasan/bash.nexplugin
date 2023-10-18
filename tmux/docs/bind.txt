@@ -1,0 +1,5 @@
+bind e run-shell 'echo "hi"'
+bind g run-shell 'echo home'
+#bind-key K run-shell 'tmux switch-client -n \; kill-session -t "$(tmux display-message -p "#S")" || tmux kill-session'
+#bind C-K confirm-before -p 'Kill session? (y/n)' 'confirm-before -p "[Kill session] Are you sure? (y/n)" kill-session'
+  #bind -n c-g display "#[fill=colour235 bg=colour235 fg=red align=left]Use Ctrl-F please"

@@ -3,8 +3,8 @@
 # Init
 #""""""""""""""""""""""""""""""""""""""""""""""""""
 
-export chk_bash_mods_path="$HOME/bash_mods"
+export chk_user_mods_path="$HOME/user_mods"
 
-# bash_mods
-mkdir -p $chk_bash_mods_path
-touch $chk_bash_mods_path/new.mod
+# user_mods
+mkdir -p $chk_user_mods_path
+touch $chk_user_mods_path/new.mod

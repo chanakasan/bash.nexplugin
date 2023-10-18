@@ -6,7 +6,7 @@ win() {
   show_windows
 }
 
-sess() {
+ses() {
   show_sessions
 }
 
