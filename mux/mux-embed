@@ -7,7 +7,7 @@ main() {
   local s=pages-next
   cd $wd
   
-  tmux_new_session -d -s $s -n "main"
+  tmux-new $s -d
   tmux_send_keys -t $s:1 "code ." C-m
   tmux_select_window -t $s:1
   tmux_attach -t $s:1 
