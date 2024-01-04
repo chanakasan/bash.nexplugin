@@ -6,7 +6,7 @@ main() {
   local v1="$1"
   local example=$chk_dotfiles_path/mux/mux-example
   if [ -z "$v1" ]; then
-    mux-home
+    tmux at
   elif [ "$v1" = "new" ]; then
     mux_new
   elif [ "$v1" = "create" ]; then

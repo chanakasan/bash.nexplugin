@@ -1,7 +1,7 @@
 # vim:ft=sh:
 
 ed() {
-  local v1="${1:-a}"
+  local v1="$1"
   local v2="$2"
   local file=$chk_bash_path/$v1
   local mod=$chk_bash_path/mods/mod_$v1
@@ -13,12 +13,12 @@ ed() {
   elif [ "$v1" = "mod" ]; then
     vi $mods_path
   else
-    ed_$v1 "${@:2}"
+    ed_default
   fi
 }
 
-ed_a() {
-  vi $chk_user_mods_path/new.mod
+ed_default() {
+  vi $chk_user_mods_path/
 }
 
 ed_bin() {
