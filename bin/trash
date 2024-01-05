@@ -2,11 +2,15 @@
 
 main() {
   local trash_dir=$HOME/trash
-  local v1="$1"
-  local outName=$(basename $v1)
+  local a1="$1"
+  local outName=$(basename $a1)
+
+  if [ -z "$a1" ]; then
+	  mux trash
+  fi
 
   mkdir -p $trash_dir
-  mv $v1 $trash_dir/$outName--`num`
+  mv $a1 $trash_dir/$outName--`num`
 }
 
 main "$@"
