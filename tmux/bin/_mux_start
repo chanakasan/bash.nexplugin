@@ -1,6 +1,0 @@
-main() {
-  local name="$1"
-  sh $nex_tmux_path/mux/$name.sh
-}
-
-main "$@"

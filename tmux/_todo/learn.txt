@@ -1,2 +1,0 @@
-# if this pain is the left most do notion, else kill it 
-#bind -n M-q if -F '#{pane_at_left}'  ''  'kill-pane'

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-main() {
-  local r=$(tmux display -F '#{pane_id}')
-  echo $r
-}
-
-main
