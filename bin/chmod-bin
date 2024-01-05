@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+main() {
+  local v="$1"
+  if [ -f "$v" ]; then
+    chmod +x "$v"
+  else
+    echo "Not a file: $v"
+  fi
+}
+
+main "$@"

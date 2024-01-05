@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -e
+
+main() {
+  local v1="$1"
+  if [ -z "$v1" ]; then
+    mux_at
+  elif [ "$v1" = "new" ]; then
+    mux_new
+  elif [ "$v1" = "create" ]; then
+    mux_create
+  elif [ "$v1" = "ex" ]; then
+    mux_ex
+  else
+    _mux_start $v1
+  fi
+}
+
+mux_ex() {
+  local example=$chk_dotfiles_path/tmux/mux/mux-example.sh
+  vi $example
+}
+
+mux_at() {
+  local out=$(tmux list-sessions 2>&1)
+  if [[ "$out" == *"no server running"* ]]; then
+    _mux_start "home"
+  else 
+    tmux at
+  fi
+}
+
+mux_new() {
+  local name=`tmux-new-session-name`
+  tmux new-session -d -s $name -n "main"
+  tmux attach-session -t $name:1
+}
+
+mux_create() {
+ vi $chk_dotfiles_path/mux/mux-example
+}
+
+main "$@"

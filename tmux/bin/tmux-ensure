@@ -8,7 +8,7 @@ main() {
     echo "inside tmux"
     # do nothiin
   else
-    mux-home
+    mux "home"
   fi
 }
 

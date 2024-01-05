@@ -1,0 +1,6 @@
+main() {
+  local name="$1"
+  sh $chk_dotfiles_path/tmux/mux/$name.sh
+}
+
+main "$@"

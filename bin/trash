@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+main() {
+  local trash_dir=$HOME/trash
+  local v1="$1"
+  local outName=$(basename $v1)
+
+  mkdir -p $trash_dir
+  mv $v1 $trash_dir/$outName--`num`
+}
+
+main "$@"

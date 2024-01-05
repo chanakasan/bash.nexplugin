@@ -3,8 +3,7 @@
 . ~/dotfiles/lib/lib-tmux.sh
 
 main() {
-  local wd=$HOME/sandboxes/temp
-  local s=temp
+  local wd=$HOME/temp/any
   cd $wd
   tmux-new "temp"
 }
