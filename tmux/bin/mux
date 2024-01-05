@@ -18,7 +18,7 @@ main() {
 }
 
 mux_ex() {
-  local example=$chk_dotfiles_path/tmux/mux/mux-example.sh
+  local example=$nex_tmux_path/mux/example.sh
   vi $example
 }
 
@@ -38,7 +38,7 @@ mux_new() {
 }
 
 mux_create() {
- vi $chk_dotfiles_path/mux/mux-example
+ vi $nex_tmux_path/mux/example.sh
 }
 
 main "$@"
