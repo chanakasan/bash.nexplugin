@@ -1,11 +1,11 @@
 #[[ $- == *i* ]] && stty -ixon
 
 # init
-source $chk_bash_path/init
+source $nex_bash_path/src/init
 
 # base
-source $chk_bash_path/env
-source $chk_bash_path/aliases
-source $chk_bash_path/functions
+source $nex_bash_path/src/env
+source $nex_bash_path/src/aliases
+source $nex_bash_path/src/functions
 
 echo "Bash loaded."
