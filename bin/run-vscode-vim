@@ -1,0 +1,9 @@
+main() {
+  local input="$1"
+  local find="\\"
+  local replace="\/"
+  local out=$(echo $input | sed 's#\\#\/#g')
+  vim $out
+}
+
+main "$@"

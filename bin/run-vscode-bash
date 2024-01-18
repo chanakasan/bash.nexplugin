@@ -1,0 +1,15 @@
+# replace first instance
+# ${parameter/pattern/string}
+
+# replace all
+# ${parameter//pattern/string}
+
+main() {
+  local input="$1"
+  local find="\\"
+  local replace="\/"
+  local out=$(echo $input | sed 's#\\#\/#g')
+  sh $out
+}
+
+main "$@"

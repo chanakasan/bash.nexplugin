@@ -2,38 +2,43 @@
 
 set -e
 
-get_base_path() {
+main() {
+  local start_text='__nex_bash_start'
+  local end_text='__nex_bash_end'
+  local bashrc="$HOME/.bashrc"
+  local nex_bash_path=$(get_root_path)/nex-bash
+  echo " Installing - Nex Bash"
+  remove_from_bashrc
+  copy_to_bashrc
+  echo ""
+  echo " done"
+  echo " Please run below command"
+  echo " source ~/.bashrc"
+  echo ""
+}
+
+get_root_path() {
   local user=$(whoami)
   if [ "$user" = "codespace" ]; then
     echo /workspaces/.codespaces/.persistedshare
   else
-    echo $HOME
+    echo $HOME/dotfiles
   fi
 }
 
 remove_from_bashrc() {
-  sed -i '/#__nex_bash_start/,/#__nex_bash_end/{d}' $bashrc
+  sed -i '/#'$start_text'/,/#'$end_text'/{d}' $bashrc
 }
 
 copy_to_bashrc() {
-  local base_path=$(get_base_path)
   echo "" >> $bashrc
-  echo '#__nex_bash_start' >> $bashrc
-  echo 'export nex_bash_path='$base_path/nex-bash >> $bashrc
-  echo 'source $nex_bash_path/src/main' >> $bashrc
+  echo "#$start_text" >> $bashrc
+  echo 'export nex_bash_path='$nex_bash_path >> $bashrc
+  echo 'source $nex_bash_path/bash/main.sh' >> $bashrc
   echo 'export PATH=$nex_bash_path/bin:$PATH' >> $bashrc
-  echo '#__nex_bash_end' >> $bashrc
+  echo "#$end_text" >> $bashrc
   echo "" >> $bashrc
 }
 
-main() {
-  local bashrc="$HOME/.bashrc"
-  echo "Nex Bash Install"
-  remove_from_bashrc
-  copy_to_bashrc
-  echo "Done"
-  echo "Please run 'reload'"
-  echo ""
-}
-
+# _end_
 main
