@@ -1,9 +1,5 @@
 # vim:ft=sh:
-#""""""""""""""""""""""""""""""""""""""""""""""""""
-# Init
-#""""""""""""""""""""""""""""""""""""""""""""""""""
 
-export nex_user_mods_path="$HOME/user_mods"
+export nex_user_mods_path="$HOME/umods"
 
-# user_mods
 mkdir -p $nex_user_mods_path
