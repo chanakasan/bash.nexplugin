@@ -1,0 +1,72 @@
+#!/bin/bash
+
+main() {
+  local a1="$1"
+  local a2="$2"
+  local fn=_ed_$a1
+  if [[ $(type -t $fn ) == function ]]; then
+    $fn "${@:2}"
+  else
+    print_usage
+  fi
+  wait_for_key
+}
+
+wait_for_key() {
+  echo "Press any key to continue"
+  while [ true ]; do
+    read -t 5 -n 1
+    if [ $? = 0 ]; then
+      exit
+    else
+      echo "waiting for the keypress"
+    fi
+  done
+}
+
+print_usage() {
+  echo "Usage: ed <type> <file>"
+}
+
+_ed_umod() {
+  local user_mods_path=$HOME/umods
+  vi $user_mods_path
+}
+
+_ed_tmux() {
+  vi $nex_tmux_path
+}
+
+_ed_mux() {
+  vi $nex_mux_path
+}
+
+_ed_mod() {
+  vi $nex_mods_path
+}
+
+_ed_git() {
+  vi $nex_git_path
+}
+
+_ed_script() {
+  vi $nex_script_path
+}
+
+_ed_input() {
+  $HOME/inputrc
+}
+
+_ed_bash() {
+  vi $HOME/.bashrc
+}
+
+_ed_ssh() {
+  vi $HOME/.ssh/config
+}
+
+_ed_vim() {
+  vi $HOME/.vimrc
+}
+
+main "$@"
