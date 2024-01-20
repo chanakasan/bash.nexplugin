@@ -28,45 +28,50 @@ print_usage() {
   echo "Usage: ed <type> <file>"
 }
 
-_ed_umod() {
-  local user_mods_path=$HOME/umods
-  vi $user_mods_path
-}
-
-_ed_tmux() {
-  vi $nex_tmux_path
-}
-
-_ed_mux() {
-  vi $nex_mux_path
-}
-
-_ed_mod() {
-  vi $nex_mods_path
-}
-
-_ed_git() {
-  vi $nex_git_path
-}
-
-_ed_script() {
-  vi $nex_script_path
-}
-
-_ed_input() {
+_ed_inp() {
   $HOME/inputrc
-}
-
-_ed_bash() {
-  vi $HOME/.bashrc
 }
 
 _ed_ssh() {
   vi $HOME/.ssh/config
 }
 
-_ed_vim() {
+_ed_brc() {
+  vi $HOME/.bashrc
+}
+
+_ed_vrc() {
   vi $HOME/.vimrc
+}
+
+# open in vscode
+_ed_bash() {
+  vsco $nex_bash_path
+}
+
+_ed_umod() {
+  local user_mods_path=$HOME/umods
+  vsco $user_mods_path
+}
+
+_ed_tmux() {
+  vsco $nex_tmux_path
+}
+
+_ed_mux() {
+  vsco $nex_mux_path
+}
+
+_ed_mod() {
+  vsco $nex_mods_path
+}
+
+_ed_git() {
+  vsco $nex_git_path
+}
+
+_ed_script() {
+  vsco $nex_script_path
 }
 
 main "$@"

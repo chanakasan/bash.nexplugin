@@ -8,7 +8,3 @@ _nx_is_number() {
     echo "false"
   fi
 }
-
-bashrc() {
-  vi $HOME/.bashrc
-}

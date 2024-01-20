@@ -9,7 +9,7 @@ main() {
   local find="\\"
   local replace="\/"
   local out=$(echo $input | sed 's#\\#\/#g')
-  sh $out
+  bash $out
 }
 
 main "$@"
