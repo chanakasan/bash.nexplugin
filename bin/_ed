@@ -29,19 +29,19 @@ print_usage() {
 }
 
 _ed_inp() {
-  $HOME/inputrc
+  vim $HOME/inputrc
 }
 
 _ed_ssh() {
-  vi $HOME/.ssh/config
+  vim $HOME/.ssh/config
 }
 
 _ed_brc() {
-  vi $HOME/.bashrc
+  vim $HOME/.bashrc
 }
 
 _ed_vrc() {
-  vi $HOME/.vimrc
+  vim $HOME/.vimrc
 }
 
 # open in vscode
