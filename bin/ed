@@ -1,7 +1,11 @@
 #!/bin/bash
 
 main() {
-	tmux popup -E -d '#{pane_current_path}' -w 90% -h 100% -- _ed $@
+	if [ "$nex_use_tmux" == "true" ]; then
+		tmux popup -E -d '#{pane_current_path}' -w 90% -h 100% -- _ed $@
+	else
+		_ed $@
+	fi
 }
 
 main "$@"

@@ -8,8 +8,8 @@ main() {
     $fn "${@:2}"
   else
     print_usage
+    wait_for_key
   fi
-  wait_for_key
 }
 
 wait_for_key() {
@@ -36,7 +36,14 @@ _ed_ssh() {
   vim $HOME/.ssh/config
 }
 
+_ed_rc() {
+  edit_bashrc
+}
 _ed_brc() {
+  edit_bashrc
+}
+
+edit_bashrc() {
   vim $HOME/.bashrc
 }
 
@@ -45,6 +52,10 @@ _ed_vrc() {
 }
 
 # open in vscode
+_ed_vim() {
+  vsco $HOME/dotfiles/nex-vim
+}
+
 _ed_bash() {
   vsco $nex_bash_path
 }

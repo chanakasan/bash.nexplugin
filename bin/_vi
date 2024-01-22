@@ -1,7 +1,0 @@
-#!/bin/bash
-
-main() {
-	tmux popup -E -d '#{pane_current_path}' -w 80% -h 100% -- vim $@
-}
-
-main "$@"

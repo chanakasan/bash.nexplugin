@@ -1,0 +1,16 @@
+#!/bin/bash
+
+main() {
+	if [ "$nex_use_tmux" == "true" ]; then
+		 _vim_popup "$@"
+	else
+		vim "$@"
+	fi
+}
+
+_vim_popup() {
+	# if inside popup alert
+	tmux popup -E -d '#{pane_current_path}' -w 80% -h 100% -- vim "$@"
+}
+
+main "$@"
