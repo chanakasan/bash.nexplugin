@@ -46,15 +46,7 @@ _ed_brc() {
 }
 
 _ed_vrc() {
-  _edit_vimrc
-}
-
-_edit_bashrc() {
-  vim $HOME/.bashrc
-}
-
-_edit_vimrc() {
-  vim $HOME/.vimrc
+  edit_vimrc
 }
 
 _ed_umod() {
@@ -62,4 +54,15 @@ _ed_umod() {
   vim $user_mods_path
 }
 
+#;; suport
+
+edit_bashrc() {
+  vim $HOME/.bashrc
+}
+
+edit_vimrc() {
+  vim $HOME/.vimrc
+}
+
+# _end_
 main "$@"
