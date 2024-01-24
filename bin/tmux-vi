@@ -2,6 +2,11 @@
 
 main() {
   local s=$(pgrep -x vi)
+  local is_nested=$(tmux-nested)
+
+  if [ "$is_nested" != "true"  ]; then
+    return
+  fi
 
   if [ -z "$s"  ]; then
     TERM= vi "$@"

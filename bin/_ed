@@ -51,38 +51,38 @@ _ed_vrc() {
   vim $HOME/.vimrc
 }
 
-# open in vscode
+# open in vscodede
 _ed_vim() {
-  vsco $HOME/dotfiles/nex-vim
+  vscode $HOME/dotfiles/nex-vim
 }
 
 _ed_bash() {
-  vsco $nex_bash_path
+  vscode $nex_bash_path
 }
 
 _ed_umod() {
   local user_mods_path=$HOME/umods
-  vsco $user_mods_path
+  vscode $user_mods_path
 }
 
 _ed_tmux() {
-  vsco $nex_tmux_path
+  vscode $nex_tmux_path
 }
 
 _ed_mux() {
-  vsco $nex_mux_path
+  vscode $nex_mux_path
 }
 
 _ed_mod() {
-  vsco $nex_mods_path
+  vscode $nex_mods_path
 }
 
 _ed_git() {
-  vsco $nex_git_path
+  vscode $nex_git_path
 }
 
 _ed_script() {
-  vsco $nex_script_path
+  vscode $nex_script_path
 }
 
 main "$@"
