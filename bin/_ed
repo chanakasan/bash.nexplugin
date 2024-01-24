@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $nex_bash_path/lib/_ed_vscode.sh
+
 main() {
   local a1="$1"
   local a2="$2"
@@ -43,46 +45,21 @@ _ed_brc() {
   edit_bashrc
 }
 
-edit_bashrc() {
+_ed_vrc() {
+  _edit_vimrc
+}
+
+_edit_bashrc() {
   vim $HOME/.bashrc
 }
 
-_ed_vrc() {
+_edit_vimrc() {
   vim $HOME/.vimrc
-}
-
-# open in vscodede
-_ed_vim() {
-  vscode $HOME/dotfiles/nex-vim
-}
-
-_ed_bash() {
-  vscode $nex_bash_path
 }
 
 _ed_umod() {
   local user_mods_path=$HOME/umods
-  vscode $user_mods_path
-}
-
-_ed_tmux() {
-  vscode $nex_tmux_path
-}
-
-_ed_mux() {
-  vscode $nex_mux_path
-}
-
-_ed_mod() {
-  vscode $nex_mods_path
-}
-
-_ed_git() {
-  vscode $nex_git_path
-}
-
-_ed_script() {
-  vscode $nex_script_path
+  vim $user_mods_path
 }
 
 main "$@"
