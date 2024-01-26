@@ -5,11 +5,12 @@
 # ${parameter//pattern/string}
 
 main() {
-  local input="$1"
+  local cmd="$1"
+  local input="$2"
   local find="\\"
   local replace="\/"
   local out=$(echo $input | sed 's#\\#\/#g')
-  bash $out
+  $cmd $out
 }
 
 main "$@"
