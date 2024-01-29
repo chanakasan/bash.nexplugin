@@ -9,8 +9,8 @@ main() {
   local input="$2"
   local find="\\"
   local replace="\/"
-  local out=$(echo $input | sed 's#\\#\/#g')
-  $cmd $out
+  local file=$(echo $input | sed 's#\\#\/#g')
+  "$cmd" "$file"
 }
 
 main "$@"
