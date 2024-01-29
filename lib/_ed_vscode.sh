@@ -3,6 +3,10 @@ _ed_vim() {
   vscode $HOME/dotfiles/nex-vim
 }
 
+_ed_cli() {
+  vscode $HOME/dotfiles/nex-cli
+}
+
 _ed_bash() {
   vscode $nex_bash_path
 }
