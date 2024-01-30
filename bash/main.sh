@@ -1,4 +1,4 @@
-source $nex_bash_path/lib/_helpers.sh
+source $nex_bash_path/lib/utils.sh
 
 #[[ $- == *i* ]] && stty -ixon
 
