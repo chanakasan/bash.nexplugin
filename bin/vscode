@@ -1,3 +1,0 @@
-export vscode_app_path=/mnt/c/Apps/VSCodePort
-
-$vscode_app_path/bin/code "$@"
