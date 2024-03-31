@@ -3,18 +3,29 @@
 set -e
 
 main() {
+  local dir_name=bash.nexplugin
   local start_text='__nex_bash_start'
   local end_text='__nex_bash_end'
   local bashrc="$HOME/.bashrc"
-  local nex_bash_path=$(get_root_path)/nex-bash
-  echo " Installing - Nex Bash"
+  local nex_bash_path=$(get_root_path)/$dir_name
+  start
   remove_from_bashrc
   copy_to_bashrc
-  echo ""
+  finish
+}
+
+start() {
+  # validate_var_is_defined "start_text" $start_text
+  # validate_var_is_defined "end_text" $end_text
+  # validate_var_is_defined "bashrc" $bashrc
+  echo " Installing - Nex Bash"
+}
+
+finish() {
   echo " done"
   echo " Please run below command"
-  echo " source ~/.bashrc"
-  echo ""
+  echo "source ~/.bashrc"
+  echo
 }
 
 get_root_path() {
@@ -34,8 +45,7 @@ copy_to_bashrc() {
   echo "" >> $bashrc
   echo "#$start_text" >> $bashrc
   echo 'export nex_bash_path='$nex_bash_path >> $bashrc
-  echo 'source $nex_bash_path/bash/main.sh' >> $bashrc
-  echo 'export PATH=$nex_bash_path/bin:$PATH' >> $bashrc
+  echo 'source $nex_bash_path/src/bash/main.sh' >> $bashrc
   echo "#$end_text" >> $bashrc
   echo "" >> $bashrc
 }
