@@ -8,6 +8,7 @@ main() {
   local end_text='__nex_bash_end'
   local bashrc="$HOME/.bashrc"
   local nex_bash_path=$(get_root_path)/$dir_name
+  uninstall_if $1
   start
   remove_from_bashrc
   copy_to_bashrc
@@ -26,6 +27,16 @@ finish() {
   echo " Please run below command"
   echo "source ~/.bashrc"
   echo
+}
+
+uninstall_if() {
+  if [ "_rm" == "$1" ]; then
+    echo " Uninstalling - Nex Bash"
+    remove_from_bashrc
+    echo " done"
+    echo
+    exit 0
+  fi
 }
 
 get_root_path() {
@@ -50,5 +61,4 @@ copy_to_bashrc() {
   echo "" >> $bashrc
 }
 
-# _end_
-main
+main $1

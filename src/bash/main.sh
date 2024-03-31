@@ -1,7 +1,7 @@
-source $nex_bash_path/lib/utils.sh
-
 #[[ $- == *i* ]] && stty -ixon
 
-_nx_source_main_files
+for f in $nex_bash_path/src/bash/*.bash; do
+  source $f
+done
 
 echo "Bash loaded."
