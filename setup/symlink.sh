@@ -3,14 +3,14 @@
 set -e
 
 main() {
-  echo " [bash.plugin] creating symlinks"
+  echo " [bash plugin] creating symlinks"
   add_symlinks
   echo "done"
   echo
 }
 
 add_symlinks() {
-  local src=$nex_bash_path/src/config
+  local src=$nex_bash_path/src/_config
   local dest=$HOME
   ln -nfs $src/_ackrc $dest/.ackrc
   ln -nfs $src/_agignore $dest/.agignore
