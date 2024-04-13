@@ -1,15 +1,16 @@
 #[[ $- == *i* ]] && stty -ixon
 
-for f in $nex_bash_path/src/functions/*.sh; do
-  source $f
-done
+tmp_source_folder() {
+  for f in "$1"/*.sh; do
+    if [ -f "$f" ]; then
+      source $f
+    fi
+  done
+}
 
-for f in $nex_bash_path/src/env/*.sh; do
-  source $f
-done
-
-for f in $nex_bash_path/src/alias/*.sh; do
-  source $f
-done
+tmp_source_folder $nex_bash_path/src/functions
+tmp_source_folder $nex_bash_path/src/env
+tmp_source_folder $nex_bash_path/src/alias
+tmp_source_folder $nex_bash_path/src/ext
 
 echo "Bash loaded."
