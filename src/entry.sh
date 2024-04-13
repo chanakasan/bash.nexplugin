@@ -1,5 +1,7 @@
 #[[ $- == *i* ]] && stty -ixon
 
+export nex_bash_path=$HOME/dotfiles/bash.nexplugin
+
 tmp_source_folder() {
   for f in "$1"/*.sh; do
     if [ -f "$f" ]; then
