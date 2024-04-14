@@ -3,9 +3,9 @@
 set -e
 
 main() {
-  echo " [bash plugin] creating symlinks"
+  echo " [bash.plugin] creating symlinks"
   add_symlinks
-  echo "done"
+  echo " done"
   echo
 }
 

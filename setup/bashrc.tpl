@@ -1,1 +1,0 @@
-source __s1__/src/entry.sh

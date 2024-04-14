@@ -1,6 +1,7 @@
 #[[ $- == *i* ]] && stty -ixon
 
-export nex_bash_path=$HOME/dotfiles/bash.nexplugin
+source $(nex _config)
+export nex_bash_path=$(nex _plugin "bash")
 
 tmp_source_folder() {
   for f in "$1"/*.sh; do
