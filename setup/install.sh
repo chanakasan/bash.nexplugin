@@ -1,2 +1,4 @@
 source $(nex _config)
-bash $nex_support/plugin/install/run_default.sh "bash" $1
+
+bash $nex_support/install/run_default.sh "bash.plugin"
+bash $(nex _plugin bash)/setup/symlink.sh

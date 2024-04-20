@@ -3,7 +3,7 @@
 set -e
 
 main() {
-  echo " [bash.plugin] creating symlinks"
+  echo " creating symlinks"
   add_symlinks
   echo " done"
   echo

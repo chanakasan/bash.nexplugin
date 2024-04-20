@@ -16,4 +16,4 @@ tmp_source_folder $nex_bash_path/src/env
 tmp_source_folder $nex_bash_path/src/alias
 tmp_source_folder $nex_bash_path/src/ext
 
-echo "Bash loaded."
+echo "Bash loaded"
