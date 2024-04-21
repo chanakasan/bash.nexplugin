@@ -1,6 +1,5 @@
 #[[ $- == *i* ]] && stty -ixon
 
-source $(nex _config)
 export nex_bash_path=$(nex _plugin "bash")
 
 tmp_source_folder() {
