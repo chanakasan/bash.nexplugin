@@ -1,5 +1,5 @@
-require "awesome_print"
-AwesomePrint.irb!
+# require "awesome_print"
+# AwesomePrint.irb!
 
 # returns the instance methods on klass 
 # that aren't already on Object
