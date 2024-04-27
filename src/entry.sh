@@ -1,7 +1,5 @@
 #[[ $- == *i* ]] && stty -ixon
 
-export nex_bash_path=$(nex _plugin "bash")
-
 tmp_source_folder() {
   for f in "$1"/*.sh; do
     if [ -f "$f" ]; then
@@ -10,9 +8,10 @@ tmp_source_folder() {
   done
 }
 
-tmp_source_folder $nex_bash_path/src/functions
-tmp_source_folder $nex_bash_path/src/env
-tmp_source_folder $nex_bash_path/src/alias
-tmp_source_folder $nex_bash_path/src/ext
+tmp_base=$(nex _plugin "bash")
+tmp_source_folder $tmp_base/src/functions
+tmp_source_folder $tmp_base/src/env
+tmp_source_folder $tmp_base/src/alias
+tmp_source_folder $tmp_base/src/ext
 
 echo "Bash loaded"
