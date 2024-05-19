@@ -1,7 +1,3 @@
-# self
-alias reload="nx_reload=1 source $HOME/.bashrc"
-alias rel="nx_reload=1 source $HOME/.bashrc"
-
 # utils
 alias ll="ls -lah"
 alias mkdir="mkdir -p"
