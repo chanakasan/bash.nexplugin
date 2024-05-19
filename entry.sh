@@ -1,6 +1,5 @@
 #[[ $- == *i* ]] && stty -ixon
 
-export user_bash_root=$HOME/user/bash
 tmp_source_folder() {
   if [ ! -d "$1" ]; then
     echo " not dir: $1"
@@ -13,9 +12,10 @@ tmp_source_folder() {
   done
 }
 
-tmp_source_folder $tmp_base/src/functions
-tmp_source_folder $tmp_base/src/env
-tmp_source_folder $tmp_base/src/alias
-tmp_source_folder $tmp_base/src/ext
+export user_bash_root=$HOME/user/bash
+tmp_source_folder $user_bash_root/functions
+tmp_source_folder $user_bash_root/env
+tmp_source_folder $user_bash_root/alias
 
 echo "Bash loaded"
+
